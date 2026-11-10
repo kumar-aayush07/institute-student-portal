@@ -1,0 +1,2 @@
+Place the institute logo here as logo.png.
+Optional: place the student's profile photograph here as student.png. If student.png is not present, the dashboard header displays the initials AK.

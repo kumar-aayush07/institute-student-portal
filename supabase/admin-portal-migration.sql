@@ -1,0 +1,105 @@
+-- Admin Portal foundation. Run AFTER supabase-setup.sql.
+create extension if not exists pgcrypto;
+
+create table if not exists public.portal_admins (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  access_level text not null default 'admin' check (access_level in ('super_admin','admin','editor')),
+  created_at timestamptz not null default now()
+);
+
+create or replace function public.is_portal_admin()
+returns boolean language sql stable security definer set search_path = public
+as $$ select exists (select 1 from public.portal_admins where user_id = auth.uid()); $$;
+
+revoke all on function public.is_portal_admin() from public;
+grant execute on function public.is_portal_admin() to authenticated;
+
+create table if not exists public.portal_content (
+  id uuid primary key default gen_random_uuid(),
+  content_type text not null check (content_type in ('notice','announcement','document','exam','attendance','result')),
+  title text not null,
+  reference_no text,
+  category text,
+  body text,
+  event_date date,
+  file_url text,
+  audience text not null default 'all',
+  is_published boolean not null default false,
+  publish_at timestamptz,
+  expires_at timestamptz,
+  created_by uuid references auth.users(id) on delete set null,
+  updated_by uuid references auth.users(id) on delete set null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+create index if not exists portal_content_public_idx on public.portal_content(content_type,is_published,event_date desc);
+
+create table if not exists public.portal_student_records (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  full_name text,
+  roll_number text unique,
+  student_id text,
+  department text,
+  programme text,
+  academic_session text,
+  status text not null default 'active' check (status in ('active','inactive','graduated','suspended')),
+  notes text,
+  updated_by uuid references auth.users(id) on delete set null,
+  updated_at timestamptz not null default now()
+);
+
+create table if not exists public.portal_audit_log (
+  id bigint generated always as identity primary key,
+  actor_id uuid references auth.users(id) on delete set null,
+  action text not null,
+  entity_type text not null,
+  entity_id text,
+  summary text,
+  created_at timestamptz not null default now()
+);
+
+alter table public.portal_admins enable row level security;
+alter table public.portal_content enable row level security;
+alter table public.portal_student_records enable row level security;
+alter table public.portal_audit_log enable row level security;
+
+drop policy if exists "Admins read admin list" on public.portal_admins;
+create policy "Admins read admin list" on public.portal_admins for select to authenticated using (public.is_portal_admin());
+drop policy if exists "Students read published portal content" on public.portal_content;
+create policy "Students read published portal content" on public.portal_content for select to authenticated using (is_published = true and (publish_at is null or publish_at <= now()) and (expires_at is null or expires_at >= now()));
+drop policy if exists "Admins manage portal content" on public.portal_content;
+create policy "Admins manage portal content" on public.portal_content for all to authenticated using (public.is_portal_admin()) with check (public.is_portal_admin());
+drop policy if exists "Students read own institute record" on public.portal_student_records;
+create policy "Students read own institute record" on public.portal_student_records for select to authenticated using (user_id = auth.uid());
+drop policy if exists "Admins manage student records" on public.portal_student_records;
+create policy "Admins manage student records" on public.portal_student_records for all to authenticated using (public.is_portal_admin()) with check (public.is_portal_admin());
+drop policy if exists "Admins read audit log" on public.portal_audit_log;
+create policy "Admins read audit log" on public.portal_audit_log for select to authenticated using (public.is_portal_admin());
+drop policy if exists "Admins write audit log" on public.portal_audit_log;
+create policy "Admins write audit log" on public.portal_audit_log for insert to authenticated with check (public.is_portal_admin() and actor_id = auth.uid());
+
+-- Extend the existing assignment tables for the trusted admin console.
+drop policy if exists "Admins manage assignments" on public.assignments;
+create policy "Admins manage assignments" on public.assignments for all to authenticated using (public.is_portal_admin()) with check (public.is_portal_admin());
+drop policy if exists "Admins manage all submissions" on public.assignment_submissions;
+create policy "Admins manage all submissions" on public.assignment_submissions for all to authenticated using (public.is_portal_admin()) with check (public.is_portal_admin());
+
+-- Admin-only uploads for institute materials; students may read published material through signed URLs generated by authorised code.
+insert into storage.buckets (id,name,public,file_size_limit,allowed_mime_types)
+values ('portal-admin-files','portal-admin-files',false,26214400,array['application/pdf','image/jpeg','image/png','image/webp','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'])
+on conflict (id) do update set public=false,file_size_limit=excluded.file_size_limit,allowed_mime_types=excluded.allowed_mime_types;
+drop policy if exists "Admins manage portal files" on storage.objects;
+create policy "Admins manage portal files" on storage.objects for all to authenticated using (bucket_id='portal-admin-files' and public.is_portal_admin()) with check (bucket_id='portal-admin-files' and public.is_portal_admin());
+
+-- IMPORTANT: after creating your admin account in Authentication > Users, run:
+-- insert into public.portal_admins(user_id,access_level)
+-- values ('PASTE-AUTH-USER-UUID-HERE','super_admin');
+
+-- Permit administrators to review student-uploaded assignment files and manage institute question-paper files.
+drop policy if exists "Admins read all assignment submission files" on storage.objects;
+create policy "Admins read all assignment submission files" on storage.objects for select to authenticated
+using (bucket_id='assignment-submissions' and public.is_portal_admin());
+drop policy if exists "Admins manage assignment materials" on storage.objects;
+create policy "Admins manage assignment materials" on storage.objects for all to authenticated
+using (bucket_id='assignment-materials' and public.is_portal_admin())
+with check (bucket_id='assignment-materials' and public.is_portal_admin());

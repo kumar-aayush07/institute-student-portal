@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#781f19" />
+  <title>Student Portal | Indian Institute of Technology Madras</title>
+  <link rel="stylesheet" href="css/master.css" />
+</head>
+<body>
+
+<div class="portal-loader" id="portalLoader" aria-live="polite" aria-label="Loading student portal">
+  <div class="loader-card">
+    <div class="loader-emblem-wrap">
+      <span class="loader-orbit loader-orbit-one"></span>
+      <span class="loader-orbit loader-orbit-two"></span>
+      <span class="loader-orbit-dot"></span>
+      <img class="loader-emblem" src="assets/logo.png" alt="IIT Madras emblem" />
+    </div>
+    <div class="loader-wordmark">IITM<span>STUDENT PORTAL</span></div>
+    <div class="loader-progress"><span></span></div>
+    <p class="loader-caption" id="loaderCaption">Preparing your academic space</p>
+    <div class="loader-footnote">INDIAN INSTITUTE OF TECHNOLOGY MADRAS</div>
+  </div>
+</div>
+
+<div class="page-shell">
+  <div class="watermark" aria-hidden="true">
+    <img src="assets/logo.png" alt="" class="watermark-logo" />
+  </div>
+
+  <header>
+    <div class="brand-mark" aria-label="Institute emblem">
+      <img src="assets/logo.png" alt="Institute Logo" class="brand-logo" />
+    </div>
+    <div class="brand-copy">
+      <div class="english">INDIAN INSTITUTE OF TECHNOLOGY MADRAS</div>
+      <div class="hindi">भारतीय प्रौद्योगिकी संस्थान मद्रास</div>
+      <div class="tamil">இந்திய தொழில்நுட்பக் கழகம் மெட்ராஸ்</div>
+    </div>
+    <div class="header-partner-mark" aria-label="G20 India 2023">
+      <img src="assets/g20-india-2023.png" alt="G20 India 2023" />
+    </div>
+  </header>
+
+  <main>
+    <div class="login-layout">
+      <section class="side-note" aria-hidden="true">
+        <div class="eyebrow">Your academic space</div>
+        <h1>Learn.<br>Grow.<br>Achieve.</h1>
+        <p>A single place to access your academic journey, institute updates and student services.</p>
+        <div class="ornament"></div>
+      </section>
+
+      <section class="login-card" aria-labelledby="login-title">
+        <div class="card-emblem">
+            <img
+                src="assets/logo.png"
+                alt="Institute Logo"
+                class="card-logo"
+            />
+        </div>
+        <div class="card-heading">
+          <div class="overline">Student portal</div>
+          <h2 id="login-title">Welcome back</h2>
+          <p>Sign in using your institutional credentials</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="field">
+            <label for="email">INSTITUTIONAL EMAIL</label>
+            <div class="input-wrap">
+              <input id="email" name="email" type="email" placeholder="rollnumber.iitm@outlook.in" autocomplete="username" required />
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label for="password">PASSWORD</label>
+            <div class="input-wrap">
+              <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+              <button class="toggle-password" type="button" id="togglePassword" aria-label="Show password">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-meta"><a class="forgot" href="#" id="forgotLink">Forgot password?</a></div>
+          <button class="submit-btn" type="submit">
+            Sign in
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="message" id="formMessage" role="status" aria-live="polite"></div>
+        </form>
+        <div class="security-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Secure access for authorised students only
+        </div>
+      </section>
+
+      <section class="side-note" aria-hidden="true" style="text-align:right">
+        <div class="eyebrow">One institute · One community</div>
+        <h1>Your future<br>starts here.</h1>
+        <p>Stay connected with classes, notices, resources and everything that moves you forward.</p>
+        <div class="ornament" style="margin-left:auto"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="institution-footer">
+    <div class="institution-footer-main">
+      <div class="institution-footer-identity">
+        <img src="assets/logo.png" alt="Indian Institute of Technology Madras emblem" class="institution-footer-logo" />
+        <div class="institution-footer-name">
+          <strong>INDIAN INSTITUTE OF TECHNOLOGY MADRAS</strong>
+          <span lang="hi">भारतीय प्रौद्योगिकी संस्थान मद्रास</span>
+          <span lang="ta">இந்திய தொழில்நுட்பக் கழகம் மெட்ராஸ்</span>
+          <small>Excellence in Education · Research · Innovation</small>
+        </div>
+      </div>
+      <div class="institution-footer-links">
+        <div class="institution-footer-column">
+          <h3>PORTAL</h3>
+          <a href="index.html">Student Login</a>
+          <a href="dashboard.html#overview">Candidate Dashboard</a>
+          <a href="dashboard.html#attendance">Attendance</a>
+          <a href="dashboard.html#notices">Notices</a>
+        </div>
+        <div class="institution-footer-column">
+          <h3>ACADEMICS</h3>
+          <a href="dashboard.html#assignment">Assignments</a>
+          <a href="dashboard.html#exam">Examinations</a>
+          <a href="dashboard.html#results">Results</a>
+          <a href="dashboard.html#documents">Documents</a>
+        </div>
+        <div class="institution-footer-column">
+          <h3>INFORMATION</h3>
+          <a href="#privacy" data-footer-info="Privacy information will be published by the institute.">Privacy</a>
+          <a href="#accessibility" data-footer-info="Accessibility information will be published by the institute.">Accessibility</a>
+          <a href="#help" data-footer-info="For portal assistance, contact the institute's authorised support desk.">Help &amp; Support</a>
+          <a href="#contact" data-footer-info="Official contact information should be verified on the institute website.">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="institution-footer-bottom">
+      <span>© <span class="footer-year"></span> Indian Institute of Technology Madras. All rights reserved.</span>
+      <span class="footer-bottom-note">Official Student Portal <i aria-hidden="true"></i> Secure Institutional Access</span>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-backdrop" id="forgotModal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+  <div class="modal">
+    <button class="close-modal" id="closeModal" aria-label="Close">&times;</button>
+    <h3 id="forgotTitle">Reset your password</h3>
+    <p>Enter your institutional email address. If password recovery is enabled by your institute, instructions will be sent to your registered email.</p>
+    <form id="resetForm">
+      <div class="field">
+        <label for="resetEmail">INSTITUTIONAL EMAIL</label>
+        <div class="input-wrap"><input id="resetEmail" type="email" placeholder="name@institute.edu" required /></div>
+      </div>
+      <div class="modal-actions">
+        <button class="cancel-btn" type="button" id="cancelModal">Cancel</button>
+        <button class="send-btn" type="submit">Continue</button>
+      </div>
+      <div class="message" id="resetMessage"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const password = document.getElementById('password');
+  document.getElementById('togglePassword').addEventListener('click', () => {
+    const showing = password.type === 'text';
+    password.type = showing ? 'password' : 'text';
+    document.getElementById('togglePassword').setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+  });
+
+
+  const modal = document.getElementById('forgotModal');
+  const openModal = () => {
+    modal.classList.add('open');
+    document.getElementById('resetEmail').value = document.getElementById('email').value;
+    document.getElementById('resetEmail').focus();
+  };
+  const closeModal = () => modal.classList.remove('open');
+  document.getElementById('forgotLink').addEventListener('click', (event) => { event.preventDefault(); openModal(); });
+  document.getElementById('closeModal').addEventListener('click', closeModal);
+  document.getElementById('cancelModal').addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
+</script>
+<script>
+  document.querySelectorAll('.footer-year').forEach(el => el.textContent = new Date().getFullYear());
+  document.querySelectorAll('[data-footer-info]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const message = document.getElementById('formMessage');
+      if (message) message.textContent = link.dataset.footerInfo;
+    });
+  });
+</script>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  const supabase = createClient('https://huzqfyrvgkjmnvsnajjs.supabase.co', 'sb_publishable_QzE8YG6ev_opnfz5MCqEFA_1hu8NGmi');
+  const form = document.getElementById('loginForm');
+  const message = document.getElementById('formMessage');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = form.querySelector('.submit-btn');
+    button.disabled = true;
+    message.textContent = 'Signing in securely…';
+    const { error } = await supabase.auth.signInWithPassword({
+      email: document.getElementById('email').value.trim(),
+      password: document.getElementById('password').value
+    });
+    button.disabled = false;
+    if (error) {
+      message.textContent = error.message === 'Invalid login credentials'
+        ? 'The email or password is incorrect. Please try again.'
+        : error.message;
+      return;
+    }
+    const loader = document.getElementById('portalLoader');
+    document.getElementById('loaderCaption').textContent = 'Welcome back — opening your dashboard';
+    loader.classList.add('is-active');
+    await new Promise(resolve => window.setTimeout(resolve, 2000));
+    window.location.href = 'dashboard.html';
+  });
+
+  document.getElementById('resetForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('resetEmail').value.trim();
+    const target = document.getElementById('resetMessage');
+    target.textContent = 'Sending password reset instructions…';
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + window.location.pathname
+    });
+    target.textContent = error ? error.message : 'If this account exists, password reset instructions have been sent to its registered email.';
+  });
+
+  // Keep the login page as the Live Server entry point, even when a previous
+  // Supabase session exists. Navigation happens only after an explicit sign-in.
+
+</script>
+</body>
+</html>

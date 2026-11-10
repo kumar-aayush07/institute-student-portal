@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#781f19" />
+  <title>Candidate Dashboard | Indian Institute of Technology Madras</title>
+  <link rel="stylesheet" href="css/master.css" />
+</head>
+<body>
+
+<div class="portal-loader is-active" id="portalLoader" aria-live="polite" aria-label="Loading student portal">
+  <div class="loader-card">
+    <div class="loader-emblem-wrap">
+      <span class="loader-orbit loader-orbit-one"></span>
+      <span class="loader-orbit loader-orbit-two"></span>
+      <span class="loader-orbit-dot"></span>
+      <img class="loader-emblem" src="assets/logo.png" alt="IIT Madras emblem" />
+    </div>
+    <div class="loader-wordmark">IITM<span>STUDENT PORTAL</span></div>
+    <div class="loader-progress"><span></span></div>
+    <p class="loader-caption" id="loaderCaption">Securing your student session</p>
+    <div class="loader-footnote">INDIAN INSTITUTE OF TECHNOLOGY MADRAS</div>
+  </div>
+</div>
+
+<div class="dashboard-page">
+  <div class="dashboard-watermark" aria-hidden="true"><img src="assets/logo.png" alt="" /></div>
+
+  <header class="portal-header">
+    <a class="portal-header-brand" href="#overview" aria-label="Candidate Dashboard home">
+      <img src="assets/logo.png" alt="Institute logo" class="portal-header-logo" />
+      <span class="portal-header-institute">
+        <strong>INDIAN INSTITUTE OF TECHNOLOGY MADRAS</strong>
+        <span lang="hi">भारतीय प्रौद्योगिकी संस्थान मद्रास</span>
+        <span lang="ta">இந்திய தொழில்நுட்பக் கழகம் மெட்ராஸ்</span>
+      </span>
+    </a>
+    <div class="portal-header-account">
+      <div class="portal-student-photo" aria-label="Student profile photo">
+        <span class="portal-student-initials">AK</span>
+        <img src="assets/student.png" alt="Aayush Kumar" onerror="this.style.display='none'" />
+      </div>
+      <div class="portal-student-details">
+        <strong>Aayush Kumar</strong>
+        <span>Candidate · 21F1000498</span>
+        <small>Student Portal</small>
+      </div>
+      <a class="portal-header-logout" href="index.html" id="headerLogout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 17l5-5-5-5M15 12H3M21 4v16"/></svg>
+        <span>Logout</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="dashboard-workspace">
+  <aside class="dashboard-sidebar">
+
+    <div class="dashboard-nav-label">Workspace</div>
+    <nav class="dashboard-nav" aria-label="Candidate navigation">
+      <a href="#overview" class="active" data-section="Overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>Overview
+      </a>
+      <a href="#attendance" data-section="Attendance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18M8 14l2.5 2.5L16 11"/></svg>Attendance</a>
+      <a href="#notices" data-section="Notices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>Notices</a>
+      <a href="#assignment" data-section="Assignment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4h-3a2 2 0 0 0-2 2v14h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12h10M7 16h7"/></svg>Assignment</a>
+      <a href="#exam" data-section="Exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v16h18V5a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 11h10M7 15h10M7 19h6"/></svg>Exam</a>
+      <a href="#results" data-section="Results &amp; Gradecard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Results &amp; Gradecard</a>
+      <a href="#account" data-section="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Account</a>
+      <a href="#documents" data-section="Documents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>Documents</a>
+      <a href="#personal-info" data-section="Personal Info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2z"/></svg>Personal Info</a>
+    </nav>
+
+    <div class="dashboard-sidebar-spacer"></div>
+  </aside>
+
+  <main class="dashboard-main">
+    <div class="dashboard-topbar">
+      <div class="dashboard-breadcrumb">Student Portal <span aria-hidden="true">/</span> <strong id="breadcrumbCurrent">Overview</strong></div>
+      <div class="dashboard-context-label">OFFICIAL CANDIDATE AREA</div>
+    </div>
+
+    <section id="overviewSection">
+      <div class="dashboard-welcome">
+        <div>
+          <div class="eyebrow">Candidate dashboard</div>
+          <h1>Welcome, Aayush Kumar.</h1>
+          <p>Here's your academic overview and student information.</p>
+        </div>
+        <div class="dashboard-date" id="currentDate"></div>
+      </div>
+
+      <h2 class="dashboard-section-title">Candidate Information</h2>
+      <div class="candidate-info-card">
+        <div class="candidate-info-heading">
+          <span>Student identity</span>
+          <small>Official academic record</small>
+        </div>
+        <div class="candidate-info-grid">
+          <div class="candidate-data">
+            <label>Roll Number</label>
+            <strong>CS25B149</strong>
+          </div>
+          <div class="candidate-data">
+            <label>Student ID</label>
+            <strong>21F1000498</strong>
+          </div>
+          <div class="candidate-data">
+            <label>Department</label>
+            <strong>Computer Science and Engineering</strong>
+          </div>
+          <div class="candidate-data">
+            <label>Academic Status</label>
+            <strong>Active Candidate</strong>
+          </div>
+          <div class="candidate-data" style="grid-column: 1 / -1">
+            <label>Subject Codes</label>
+            <div class="subject-codes">
+              <span>CS2500X</span>
+              <span>CS260L</span>
+              <span>CS260P</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="dashboard-section-title">Quick Access</h2>
+      <div class="dashboard-quick-grid">
+        <div class="dashboard-quick-card dashboard-quick-card-action" data-open-section="Attendance" role="button" tabindex="0">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18M8 14l2 2 5-5"/></svg></div>
+          <strong>Attendance</strong>
+          <span>View your attendance record</span>
+        </div>
+        <div class="dashboard-quick-card dashboard-quick-card-action" data-open-section="Notices" role="button" tabindex="0">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></div>
+          <strong>Notices</strong>
+          <span>Read institute announcements</span>
+        </div>
+        <div class="dashboard-quick-card">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3h8l4 4v14H4V3zM8 12h8M8 16h8"/></svg></div>
+          <strong>Documents</strong>
+          <span>Access your academic documents</span>
+        </div>
+        <div class="dashboard-quick-card dashboard-quick-card-action" data-open-section="Results & Gradecard" role="button" tabindex="0">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h17M8 15l3-4 3 2 5-7"/></svg></div>
+          <strong>Results &amp; Gradecard</strong>
+          <span>Review your first-year academic record</span>
+        </div>
+        <div class="dashboard-quick-card dashboard-quick-card-action" data-open-section="Personal Info" role="button" tabindex="0">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2z"/></svg></div>
+          <strong>Personal Info</strong>
+          <span>Manage your contact and personal details</span>
+        </div>
+        <div class="dashboard-quick-card dashboard-quick-card-action" data-open-section="Account" role="button" tabindex="0">
+          <div class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 2.9-.2-.1a1.7 1.7 0 0 0-1.8.1l-.2.1h-3.4l-.1-.2a1.7 1.7 0 0 0-1.6-1l-.3.1-2.9-1.7.1-.2a1.7 1.7 0 0 0-.1-1.8l-.1-.2v-3.4l.2-.1a1.7 1.7 0 0 0 1-1.6l-.1-.3 1.7-2.9.2.1a1.7 1.7 0 0 0 1.8-.1l.2-.1h3.4l.1.2a1.7 1.7 0 0 0 1.6 1l.3-.1 2.9 1.7-.1.2a1.7 1.7 0 0 0 .1 1.8l.1.2z"/></svg></div>
+          <strong>Account Settings</strong>
+          <span>Manage password and account access</span>
+        </div>
+      </div>
+
+      <div class="overview-lower-grid">
+        <section class="overview-academic-panel" aria-labelledby="academicSnapshotTitle">
+          <div class="overview-panel-heading">
+            <div>
+              <span class="overview-kicker">Academic profile</span>
+              <h2 id="academicSnapshotTitle">Academic Snapshot</h2>
+              <p>Your programme and current academic record at a glance.</p>
+            </div>
+            <span class="overview-panel-mark" aria-hidden="true">✦</span>
+          </div>
+          <div class="overview-snapshot-grid">
+            <article class="overview-snapshot-item">
+              <span class="overview-snapshot-icon">⌂</span>
+              <div><small>Programme</small><strong>B.Tech.</strong><span>Computer Science and Engineering</span></div>
+            </article>
+            <article class="overview-snapshot-item">
+              <span class="overview-snapshot-icon">▦</span>
+              <div><small>Academic session</small><strong>2025–2029</strong><span>Four-year undergraduate programme</span></div>
+            </article>
+            <article class="overview-snapshot-item">
+              <span class="overview-snapshot-icon">◷</span>
+              <div><small>Programme duration</small><strong>4 Years</strong><span>8 semesters</span></div>
+            </article>
+            <article class="overview-snapshot-item overview-snapshot-highlight">
+              <span class="overview-snapshot-icon">✧</span>
+              <div><small>First-year CGPA</small><strong>9.5</strong><span>As shown on your uploaded grade card</span></div>
+            </article>
+          </div>
+          <div class="overview-subject-strip">
+            <div><strong>Registered subject codes</strong><span>Academic subjects currently listed on your profile</span></div>
+            <div class="subject-codes"><span>CS2500X</span><span>CS260L</span><span>CS260P</span></div>
+          </div>
+        </section>
+
+        <aside class="overview-help-panel">
+          <span class="overview-kicker">Your workspace</span>
+          <h2>Stay up to date.</h2>
+          <p>Use the portal to review institute communications, academic records and your personal details.</p>
+          <a href="#notices" data-open-section="Notices"><span>01</span><span><strong>Institute notices</strong><small>Official circulars and announcements</small></span><b>↗</b></a>
+          <a href="#results" data-open-section="Results & Gradecard"><span>02</span><span><strong>Results &amp; Gradecard</strong><small>Review your academic grade card</small></span><b>↗</b></a>
+          <a href="#personal-info" data-open-section="Personal Info"><span>03</span><span><strong>Personal information</strong><small>Review or update your details</small></span><b>↗</b></a>
+        </aside>
+      </div>
+
+      <div class="overview-bottom-note">
+        <span class="overview-bottom-symbol">i</span>
+        <div><strong>Keep your profile information current</strong><p>Check your contact and emergency details in Personal Info. Official academic identifiers shown above are maintained separately from editable personal details.</p></div>
+        <a href="#personal-info" data-open-section="Personal Info">Review profile <span>→</span></a>
+      </div>
+    </section>
+
+    <section id="attendanceSection" hidden>
+      <div class="dashboard-welcome attendance-page-welcome">
+        <div>
+          <div class="eyebrow">Online attendance</div>
+          <h1>Special Classes Attendance</h1>
+          <p>Attendance records for online special classes conducted by the institute.</p>
+        </div>
+        <div class="attendance-period-control">
+          <label for="attendancePeriod">Attendance record</label>
+          <select id="attendancePeriod">
+            <option value="current">Current academic record</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="attendance-notice attendance-online-notice">
+        <span class="attendance-notice-icon" aria-hidden="true">i</span>
+        <div>
+          <strong>Online – Special Classes Attendance</strong>
+          <p>This page displays attendance for online special classes only. Physical attendance will be recorded separately when you report at the institute. Physical attendance is not included in the figures shown on this page.</p>
+        </div>
+      </div>
+
+      <div class="attendance-overall-card">
+        <div class="attendance-overall-top">
+          <div>
+            <span class="attendance-overall-label">Overall online attendance</span>
+            <strong class="attendance-overall-percent">93.88%</strong>
+          </div>
+          <span class="attendance-status-pill">Attendance recorded</span>
+        </div>
+        <div class="attendance-progress-track"
+             role="progressbar"
+             aria-label="Online special classes attendance"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="93.88">
+          <span class="attendance-progress-fill"></span>
+        </div>
+        <div class="attendance-progress-caption">
+          <span>92 classes attended</span>
+          <span>6 not attended</span>
+        </div>
+      </div>
+
+      <h2 class="dashboard-section-title attendance-summary-title">Attendance Summary</h2>
+      <div class="attendance-summary-grid">
+        <article class="attendance-stat-card">
+          <span class="attendance-stat-label">Class records</span>
+          <strong>98</strong>
+          <small>Recorded online class days</small>
+        </article>
+        <article class="attendance-stat-card">
+          <span class="attendance-stat-label">Classes attended</span>
+          <strong>92</strong>
+          <small>Present in online classes</small>
+        </article>
+        <article class="attendance-stat-card">
+          <span class="attendance-stat-label">Attendance percentage</span>
+          <strong>93.88%</strong>
+          <small>92 out of 98 records</small>
+        </article>
+        <article class="attendance-stat-card">
+          <span class="attendance-stat-label">Not attended</span>
+          <strong>6</strong>
+          <small>Out of 98 class records</small>
+        </article>
+      </div>
+
+      <div class="attendance-panel">
+        <div class="attendance-panel-heading">
+          <div>
+            <h2 class="dashboard-section-title">Online Attendance Details</h2>
+            <p>Current cumulative record for online special classes.</p>
+          </div>
+          <span class="attendance-record-tag">Online only</span>
+        </div>
+        <div class="attendance-detail-row">
+          <span>Total class records</span><strong>98 days</strong>
+        </div>
+        <div class="attendance-detail-row">
+          <span>Attended</span><strong class="attendance-present-value">92</strong>
+        </div>
+        <div class="attendance-detail-row">
+          <span>Not attended</span><strong>6</strong>
+        </div>
+        <div class="attendance-detail-row attendance-detail-total">
+          <span>Attendance percentage</span><strong>93.88%</strong>
+        </div>
+      </div>
+
+      <div class="attendance-panel attendance-history-panel">
+        <div class="attendance-panel-heading">
+          <div>
+            <h2 class="dashboard-section-title">Daily Attendance History</h2>
+            <p>Individual session dates and statuses will appear here when the detailed register is published.</p>
+          </div>
+        </div>
+        <div class="attendance-empty-state attendance-history-empty">
+          <div class="attendance-empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="4" width="18" height="17" rx="2"/>
+              <path d="M16 2v4M8 2v4M3 9h18M8 14h8M8 17h5"/>
+            </svg>
+          </div>
+          <strong>Detailed daily entries not connected yet</strong>
+          <p>The summary above reflects the supplied cumulative figures. Individual dates and class-wise entries will be displayed once the institute provides the detailed online attendance register.</p>
+        </div>
+      </div>
+
+      <div class="attendance-physical-note">
+        <strong>Physical attendance is maintained separately</strong>
+        <p>Your physical attendance will be recorded when you report at the institute. It will appear as a separate record and will not be combined with online special classes attendance here.</p>
+      </div>
+    </section>
+
+    <section id="noticesSection" hidden>
+      <div class="dashboard-welcome notices-page-welcome">
+        <div>
+          <div class="eyebrow">Student communications</div>
+          <h1>Notices &amp; Announcements</h1>
+          <p>Official institute circulars, announcements and student updates.</p>
+        </div>
+        <div class="notices-count" id="noticesCount">Loading notices…</div>
+      </div>
+
+      <div class="notices-intro">
+        <span class="notices-intro-icon" aria-hidden="true">i</span>
+        <p>Notices are displayed below for quick reading. Select <strong>Preview</strong> to view a notice here without navigating away from the dashboard, or use <strong>Open</strong> to view the original file.</p>
+      </div>
+
+      <div class="notices-toolbar">
+        <div class="notices-search-wrap">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
+          <input type="search" id="noticeSearch" placeholder="Search notices by title or number…" aria-label="Search notices"/>
+        </div>
+        <label class="notices-sort-label" for="noticeSort">Arrange by
+          <select id="noticeSort">
+            <option value="number-desc">Notice number — High to low</option>
+            <option value="number-asc">Notice number — Low to high</option>
+            <option value="date-desc">Date — Newest first</option>
+            <option value="date-asc">Date — Oldest first</option>
+            <option value="title-asc">Title — A to Z</option>
+            <option value="manual">Manual order</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="notices-results-line">
+        <span id="noticeResultsLabel">All notices</span>
+        <button type="button" class="notices-reset-button" id="noticeReset">Reset filters</button>
+      </div>
+
+      <div class="notices-layout">
+        <div class="notices-list" id="noticesList" aria-live="polite">
+          <div class="notices-loading">Loading institute notices…</div>
+        </div>
+        <aside class="notice-preview-panel" id="noticePreviewPanel">
+          <div class="notice-preview-placeholder">
+            <div class="notice-preview-placeholder-icon" aria-hidden="true">▤</div>
+            <strong>Notice preview</strong>
+            <p>Select a notice from the list to read it here. You can preview supported PDF and image files without opening a separate page.</p>
+          </div>
+        </aside>
+      </div>
+      <p class="notices-admin-hint">Notice files are automatically listed from the generated notice index. Add files to <code>assets/notices/</code> and run <code>python3 generate_notices.py</code> to update the list.</p>
+    </section>
+
+
+    <section id="assignmentSection" hidden>
+      <div class="dashboard-welcome">
+        <div><div class="eyebrow">Academic work · Academic session 2025–26</div><h1>Assignments</h1>
+        <p>Your official first-year integrated assessment, subject-wise requirements, submission rules and question paper.</p></div>
+      </div>
+
+      <article class="official-assignment-card">
+        <div class="official-assignment-topline"><span class="official-assignment-tag">Official assessment · IITM / AAD / CSE / 132</span><span class="official-assignment-status">Open for submission</span></div>
+        <div class="official-assignment-heading">
+          <div><div class="eyebrow">Department of Computer Science and Engineering</div><h2>Final Integrated Assignment</h2><p>First-Year Computer Science and Engineering · C Programming Language, Linux &amp; Bash, Python Programming</p></div>
+          <div class="official-assignment-marks"><strong>100</strong><span>Maximum marks</span></div>
+        </div>
+        <div class="official-assignment-facts">
+          <div><span>Issue date</span><strong>30 October 2026</strong></div>
+          <div><span>Submission deadline</span><strong>15 November 2026 · 11:59 PM IST</strong></div>
+          <div><span>Faculty / Evaluator</span><strong>Shyam Iyer Reddy</strong></div>
+          <div><span>Course codes</span><strong>CS2500X · CS260L · CS260P</strong></div>
+        </div>
+        <div class="assignment-countdown" aria-live="polite">
+          <div class="assignment-countdown-copy"><span class="eyebrow">Time remaining until submission closes</span><strong id="officialAssignmentCountdownLabel">Calculating deadline…</strong><small>Countdown uses India Standard Time (IST).</small></div>
+          <div class="assignment-countdown-units" id="officialAssignmentCountdown" data-deadline="2026-11-15T23:59:00+05:30">
+            <div><strong id="assignmentDays">—</strong><span>Days</span></div><div><strong id="assignmentHours">—</strong><span>Hours</span></div><div><strong id="assignmentMinutes">—</strong><span>Minutes</span></div><div><strong id="assignmentSeconds">—</strong><span>Seconds</span></div>
+          </div>
+        </div>
+        <div class="official-assignment-actions"><a class="assignment-primary-action" href="assets/assignments/Final-Integrated-Assignment-2025-26.pdf" target="_blank" rel="noopener">View full question paper <span aria-hidden="true">↗</span></a><a class="assignment-secondary-action" href="assets/assignments/Final-Integrated-Assignment-2025-26.pdf" download>Download PDF <span aria-hidden="true">↓</span></a></div>
+      </article>
+
+      <section class="assignment-detail-section">
+        <div class="assignment-detail-heading"><div><div class="eyebrow">Assessment guide</div><h2>Assignment at a glance</h2><p>All 18 questions are compulsory. Read the detailed requirements in each section.</p></div></div>
+        <div class="assignment-component-grid">
+          <article><span class="assignment-component-mark">35 marks</span><h3>Section A · C Programming</h3><p>7 questions · 5 marks each</p><small>Pointers, dynamic memory, structures, linked lists, files, bitwise operations, debugging and algorithms.</small></article>
+          <article><span class="assignment-component-mark">25 marks</span><h3>Section B · Linux &amp; Bash</h3><p>5 questions · 5 marks each</p><small>Filesystem, permissions, processes, redirection, Bash automation, diagnostics and data processing.</small></article>
+          <article><span class="assignment-component-mark">25 marks</span><h3>Section C · Python</h3><p>5 questions · 5 marks each</p><small>Functions, collections, CSV processing, OOP, exceptions, recursion and unit testing.</small></article>
+          <article><span class="assignment-component-mark">15 marks</span><h3>Section D · Integrated Project</h3><p>1 project · 15 marks</p><small>Build an integrated C + Bash + Python student-performance analytics and report generator.</small></article>
+        </div>
+      </section>
+
+      <section class="assignment-detail-section">
+        <div class="assignment-detail-heading"><div><div class="eyebrow">Question-wise requirements</div><h2>Detailed assignment contents</h2><p>Expand each subject to review its questions, deliverables and technical requirements.</p></div></div>
+        <div class="assignment-question-groups">
+          <details class="assignment-question-group" open><summary><span><b>Section A</b> C Programming Language</span><em>35 marks · Questions 1–7</em></summary><div class="assignment-question-list">
+            <article><h3>Q1. Pointer Arithmetic and Dynamic Memory Management <span>5 marks</span></h3><p>Dynamically allocate an array of <code>n</code> integers; read values; calculate sum and arithmetic mean using pointer arithmetic; find minimum and maximum; reverse the array in place using pointers; and release allocated memory. Validate the size, check allocation success, prevent leaks and invalid access, and explain reversal complexity.</p></article>
+            <article><h3>Q2. Structures, Functions and Data Processing <span>5 marks</span></h3><p>Create a <code>Student</code> structure containing roll number, name, three subject marks, total and percentage. Implement functions to accept multiple records, calculate totals and percentages, sort by total in descending order, search by roll number and display the highest scorer. Handle duplicate roll numbers and invalid marks.</p></article>
+            <article><h3>Q3. Linked Lists and Dynamic Data Structures <span>5 marks</span></h3><p>Implement a singly linked list with insertion at beginning/end/specified position, deletion by value, searching, iterative reversal, display and freeing all nodes. Explain array versus linked-list allocation and state complexity for head insertion, search and reversal. Handle empty lists, invalid positions, missing values and allocation failures.</p></article>
+            <article><h3>Q4. File Handling and Persistent Records <span>5 marks</span></h3><p>Build a product inventory program storing ID, name, quantity and unit price. Support add, list, search by ID, quantity update and total inventory valuation. Handle missing/unreadable files, persist records between runs, select suitable file modes and document the storage format.</p></article>
+            <article><h3>Q5. Bitwise Operations and Integer Representation <span>5 marks</span></h3><p>Accept an unsigned integer; display its bits at a clearly defined width; set, clear, toggle and test a selected bit; and count set bits. Use bitwise operators, explain masks, validate bit positions, avoid undefined shifts and state whether positions are zero-based.</p></article>
+            <article><h3>Q6. Debugging, Undefined Behaviour and Code Analysis <span>5 marks</span></h3><p>Analyse the supplied C program: identify memory-safety defects, explain the incorrect loop boundary and use-after-free, rewrite it safely, and describe how compiler warnings and a memory-safety diagnostic tool help. Distinguish intended behaviour from behaviour guaranteed by the C language.</p></article>
+            <article><h3>Q7. Algorithmic Problem Solving <span>5 marks</span></h3><p>Write a function-based palindrome checker that ignores case and non-alphanumeric characters. It must handle empty input and spaces safely, use no third-party string library, and explain the algorithm, time complexity and auxiliary-space complexity.</p></article>
+          </div></details>
+          <details class="assignment-question-group"><summary><span><b>Section B</b> Linux and Bash</span><em>25 marks · Questions 8–12</em></summary><div class="assignment-question-list">
+            <article><h3>Q8. Filesystem Navigation and Permissions <span>5 marks</span></h3><p>Show the working directory; create <code>final_assignment/</code> with <code>c_programs/</code>, <code>python_programs/</code>, <code>scripts/</code>, <code>data/</code> and <code>reports/</code>; create a root README; copy and rename a source file; display file details; and set owner read/write with other users read-only permissions. Explain absolute/relative paths and r, w, x. Include genuine terminal evidence.</p></article>
+            <article><h3>Q9. Process Management and Redirection <span>5 marks</span></h3><p>Explain PID and PPID; list processes and identify one by name; run a harmless background process and inspect it; redirect stdout and stderr separately; use a pipeline to filter and count lines; and explain <code>&gt;</code>, <code>&gt;&gt;</code>, <code>2&gt;</code> and <code>|</code>. Do not terminate system-critical processes.</p></article>
+            <article><h3>Q10. Bash Automation <span>5 marks</span></h3><p>Write executable <code>run_tests.sh</code> to validate a source directory, find C files, compile each separately with GCC warnings, store executables in a designated output directory, log success/failure and return nonzero if any compilation fails. Quote variables, support filenames with spaces, use meaningful exit codes, shebang and comments; demonstrate at least three C files including one deliberate error.</p></article>
+            <article><h3>Q11. Linux Diagnostic and Troubleshooting Report <span>5 marks</span></h3><p>Record commands and observed output for OS/kernel details, disk space, memory, current user/groups, network interfaces/IP configuration and a connectivity test where possible. Explain what each command reveals and one practical use. Never invent output or publish secrets.</p></article>
+            <article><h3>Q12. Shell-Based Data Processing <span>5 marks</span></h3><p>Create at least 20 fictional student records in a consistent format. Write a Bash script to validate the file, count records, find highest/lowest marks, calculate average, list students scoring at least 75 and write a formatted report. Handle malformed records, document validation rules and explain the pipeline.</p></article>
+          </div></details>
+          <details class="assignment-question-group"><summary><span><b>Section C</b> Python Programming</span><em>25 marks · Questions 13–17</em></summary><div class="assignment-question-list">
+            <article><h3>Q13. Functions, Collections and Data Validation <span>5 marks</span></h3><p>Accept student records and calculate totals, percentages, class average, highest/lowest scores, count above average and ranking with a documented tie-break rule. Use lists, dictionaries, functions and loops; validate marks, handle empty data and separate collection, calculations and display.</p></article>
+            <article><h3>Q14. File Processing and Exception Handling <span>5 marks</span></h3><p>Read a CSV with student IDs, names and three subject marks. Detect missing fields and invalid numbers, calculate totals/averages, write valid records to a new CSV and invalid rows to an error report. Handle missing files and access errors; never modify the original input. Use Python's standard CSV tools.</p></article>
+            <article><h3>Q15. Object-Oriented Programming <span>5 marks</span></h3><p>Design a <code>BankAccount</code> class with holder name, account number, balance, deposit, withdrawal and balance inquiry. Demonstrate at least three test cases including an invalid transaction. Reject non-positive amounts, prevent overdrafts and encapsulate state. Explain class versus instance and operation-level validation.</p></article>
+            <article><h3>Q16. Recursion, Iteration and Complexity <span>5 marks</span></h3><p>Implement GCD of two non-negative integers using iterative and recursive Euclidean algorithms. Test normal and boundary cases; use GCD(0,n)=n for positive n; document GCD(0,0); compare time, auxiliary space and stack use.</p></article>
+            <article><h3>Q17. Automated Testing and Debugging <span>5 marks</span></h3><p>Create a prime-checking Python function and a separate test module using <code>unittest</code>. Test negatives, 0, 1, 2, small primes, composites, a relatively large prime and invalid types under a documented contract. Explain boundary-value testing and include the test command and actual output.</p></article>
+          </div></details>
+          <details class="assignment-question-group"><summary><span><b>Section D</b> Integrated Mini-Project</span><em>15 marks · Question 18</em></summary><div class="assignment-question-list">
+            <article><h3>Q18. Student Performance Analytics and Report Generator <span>15 marks</span></h3><p>Develop an integrated student-performance system in which C, Linux/Bash and Python each have a distinct documented role and communicate through documented input/output files.</p><ul><li><b>Part A — C data-entry utility:</b> accept student ID, name and marks in three subjects; validate input and write valid records to a documented CSV.</li><li><b>Part B — Bash execution pipeline:</b> verify files/directories, compile C, run it with sample input, invoke Python analysis, store logs/reports and return an appropriate status on failure.</li><li><b>Part C — Python analytics engine:</b> read CSV; calculate totals, averages, rankings and subject statistics; identify students needing support using a documented threshold; write summary and ranked CSV; handle malformed records safely.</li><li><b>Part D — Documentation and verification:</b> provide README, project tree, at least five meaningful tests, genuine end-to-end evidence, design choices, limitations and improvements.</li></ul><p>Minimum standards: Linux execution, warning-free C compilation under chosen flags, Python standard library unless justified, demonstrated validation/error handling, fictional data only, and distinct documented component responsibilities. Unrelated files merely placed in one folder do not meet the integration requirement.</p></article>
+          </div></details>
+        </div>
+      </section>
+
+      <section class="assignment-detail-section">
+        <div class="assignment-detail-heading"><div><div class="eyebrow">Submission and evaluation</div><h2>Rules, deliverables &amp; marking</h2></div></div>
+        <div class="assignment-rules-grid">
+          <article><h3>Submission requirements</h3><ul><li>Individual practical assignment; each student must explain and demonstrate their work.</li><li>Submit one archive named <code>Final_Assignment_RollNumber.zip</code>, plus any separately requested declaration or cover sheet.</li><li>Keep source files readable and appropriately named; include useful comments.</li><li>Validate inputs and handle expected errors. Compile C with suitable warnings; use Python 3.</li><li>Include genuine terminal output/screenshots. Use fictional sample records only; never include real student personal data or secrets.</li><li>Retain a backup until marks are finalised. Disclose substantial external code or AI assistance under institutional policy.</li></ul></article>
+          <article><h3>Recommended project structure</h3><pre>Final_Assignment_RollNumber/
+├── README.md
+├── c_programs/
+├── linux/
+├── python_programs/
+├── integrated_project/
+│   ├── src/  scripts/
+│   ├── data/ reports/
+├── tests/
+└── evidence/
+    ├── compilation/  linux/
+    ├── python_tests/ integration/</pre><p>Identify every numbered question clearly. Do not include binaries, virtual environments or generated caches unless requested.</p></article>
+          <article><h3>Mark distribution</h3><ul><li>C Programming — <b>35 marks</b></li><li>Linux &amp; Bash — <b>25 marks</b></li><li>Python Programming — <b>25 marks</b></li><li>Integrated Project — <b>15 marks</b></li><li><b>Total — 100 marks</b></li></ul><p>Overall rubric: correctness 30%, implementation/design 25%, error handling/reliability 15%, testing/verification 15%, documentation/code quality 10%, explanation/originality 5%.</p></article>
+          <article><h3>Suggested 16-day work plan</h3><ul><li>Days 1–3: C foundations, pointers, structures, linked lists and memory safety.</li><li>Days 4–5: C files, bitwise operations, debugging and algorithms.</li><li>Days 6–8: Linux/Bash questions 8–12.</li><li>Days 9–11: Python questions 13–17.</li><li>Days 12–15: integrated project, tests and reports.</li><li>Day 16: clean-environment verification and viva preparation.</li></ul></article>
+          <article><h3>Viva voce preparation</h3><p>Be prepared to explain use-after-free, arrays versus linked lists, stack versus heap, permissions and ownership, pipelines, exit statuses, Python lists versus dictionaries, malformed CSV handling, recursion versus iteration, unit testing, integration failure reporting and scaling to large datasets.</p></article>
+          <article><h3>Academic integrity &amp; technical rules</h3><p>Work must be individual and reproducible. No fabricated evidence. Use safe programming practices, document environment/tool versions and be ready to explain every function, script, algorithm and design decision. Late penalties and promotion decisions follow published institutional regulations.</p></article>
+        </div>
+      </section>
+
+      <section class="assignment-detail-section assignment-pdf-section">
+        <div class="assignment-detail-heading"><div><div class="eyebrow">Original institute document</div><h2>Official question paper</h2><p>Read the complete 16-page PDF here or open/download the original file.</p></div><a class="assignment-secondary-action" href="assets/assignments/Final-Integrated-Assignment-2025-26.pdf" download>Download PDF ↓</a></div>
+        <div class="assignment-pdf-frame"><iframe src="assets/assignments/Final-Integrated-Assignment-2025-26.pdf#view=FitH" title="Final Integrated Assignment official question paper"></iframe></div>
+      </section>
+
+      <div class="assignment-live-list-heading"><div><div class="eyebrow">Additional published work</div><h2>Other assignments</h2><p>Any additional assignments published to your student account will appear below.</p></div></div>
+      <div class="assignment-summary-grid">
+        <article><span>Total assignments</span><strong id="assignmentTotal">—</strong></article>
+        <article><span>Submitted</span><strong id="assignmentSubmitted">—</strong></article>
+        <article><span>Pending</span><strong id="assignmentPending">—</strong></article>
+        <article><span>Overdue</span><strong id="assignmentOverdue">—</strong></article>
+      </div>
+      <div class="assignment-toolbar">
+        <label for="assignmentSubjectFilter">Subject</label>
+        <select id="assignmentSubjectFilter"><option value="">All subjects</option></select>
+        <span id="assignmentLoadStatus" role="status">Loading assignments…</span>
+      </div>
+      <div id="assignmentList" class="assignment-list" aria-live="polite">
+        <div class="assignment-empty">Loading published assignments…</div>
+      </div>
+    </section>
+
+    <section id="accountSection" hidden>
+      <div class="dashboard-welcome"><div><div class="eyebrow">Student account</div><h1>Account</h1><p>Your institute identity, programme information and account security settings.</p></div></div>
+      <article class="account-identity-card">
+        <div class="account-avatar-large account-avatar-photo" id="accountAvatar">
+          <img id="accountProfilePhoto" src="assets/student.png" alt="Student profile photograph" />
+          <span id="accountAvatarFallback" hidden>AK</span>
+        </div>
+        <div class="account-identity-main"><span class="eyebrow">Student profile</span><h2 id="accountDisplayName">Aayush Kumar</h2><p id="accountRollLine">CS25B149 · 21F1000498</p></div>
+        <span class="account-active-pill"><i></i> Signed in</span>
+      </article>
+
+      <article class="account-panel account-edit-profile-panel">
+        <div class="account-panel-heading"><div><span class="eyebrow">Personalise your account</span><h2>Profile settings</h2></div></div>
+        <form id="accountDisplayNameForm" class="account-password-form">
+          <label for="accountDisplayNameInput">Display name</label>
+          <input id="accountDisplayNameInput" type="text" maxlength="60" autocomplete="nickname" placeholder="Enter the name shown on your dashboard" required>
+          <button type="submit" class="account-primary-button">Save display name</button>
+          <p id="accountDisplayNameStatus" class="account-form-status" role="status"></p>
+        </form>
+        <div class="account-photo-controls">
+          <div><strong>Adjust profile picture</strong><p>Move and zoom the photo until your face is properly framed.</p></div>
+          <label for="accountPhotoZoom">Zoom <output id="accountPhotoZoomValue">100%</output></label>
+          <input id="accountPhotoZoom" type="range" min="100" max="180" value="100" step="1">
+          <label for="accountPhotoX">Horizontal position</label>
+          <input id="accountPhotoX" type="range" min="0" max="100" value="50" step="1">
+          <label for="accountPhotoY">Vertical position</label>
+          <input id="accountPhotoY" type="range" min="0" max="100" value="50" step="1">
+          <button type="button" id="accountPhotoReset" class="account-secondary-button">Reset photo framing</button>
+          <p id="accountPhotoStatus" class="account-form-status" role="status">Photo framing is saved on this device.</p>
+        </div>
+      </article>
+
+      <div class="account-content-grid">
+        <article class="account-panel">
+          <div class="account-panel-heading"><div><span class="eyebrow">Institute records</span><h2>Academic &amp; student details</h2></div></div>
+          <div class="account-detail-grid">
+            <div class="account-detail"><span>Full name</span><strong id="accountName">Aayush Kumar</strong></div>
+            <div class="account-detail"><span>Roll number</span><strong>CS25B149</strong></div>
+            <div class="account-detail"><span>Student ID</span><strong>21F1000498</strong></div>
+            <div class="account-detail"><span>Department</span><strong>Computer Science and Engineering</strong></div>
+            <div class="account-detail"><span>Programme</span><strong>B.Tech in Computer Science and Engineering</strong></div>
+            <div class="account-detail"><span>Programme duration</span><strong>4 Years · 8 Semesters</strong></div>
+            <div class="account-detail"><span>Academic session</span><strong>2025 – 2029</strong></div>
+            <div class="account-detail"><span>Current academic year</span><strong>First Year · 2025–26</strong></div>
+          </div>
+          <p class="account-record-note">These are institute identity and academic records. If any detail is incorrect, contact the Academic Affairs Department; changes cannot be made from this page.</p>
+        </article>
+
+        <div class="account-side-stack">
+          <article class="account-panel">
+            <div class="account-panel-heading"><div><span class="eyebrow">Login credentials</span><h2>Account information</h2></div></div>
+            <div class="account-detail-list">
+              <div><span>Login credentials · Registered email</span><strong id="accountEmail">cs25b149.iitm@outlook.in</strong></div>
+              <div><span>Account created</span><strong id="accountCreated">03 August 2026</strong></div>
+              <div><span>Last sign-in</span><strong id="accountLastSignIn">Loading…</strong></div>
+              <div><span>Account status</span><strong class="account-status-text">Authenticated</strong></div>
+            </div>
+          </article>
+          <article class="account-panel">
+            <div class="account-panel-heading"><div><span class="eyebrow">Security</span><h2>Change password</h2></div></div>
+            <form id="accountPasswordForm" class="account-password-form">
+              <label for="accountNewPassword">New password</label>
+              <input id="accountNewPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required>
+              <label for="accountConfirmPassword">Confirm new password</label>
+              <input id="accountConfirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Re-enter new password" required>
+              <button type="submit" class="account-primary-button">Update password</button>
+              <p id="accountPasswordStatus" class="account-form-status" role="status"></p>
+            </form>
+          </article>
+          <article class="account-panel account-signout-panel">
+            <div><h3>Sign out of this device</h3><p>End your current student portal session securely.</p></div>
+            <button type="button" id="accountLogoutButton" class="account-secondary-button">Sign out</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="documentsSection" hidden>
+      <div class="dashboard-welcome"><div><div class="eyebrow">Student resources</div><h1>Documents</h1><p>Access academic records and official institute documents made available to you.</p></div></div>
+      <div class="documents-toolbar">
+        <label class="documents-search"><span class="sr-only">Search documents</span><input id="documentSearch" type="search" placeholder="Search documents, categories or keywords…" autocomplete="off"></label>
+        <select id="documentCategory" aria-label="Filter documents by category"><option value="all">All categories</option><option value="academic">Academic records</option><option value="examination">Examination</option><option value="institute">Institute documents</option></select>
+      </div>
+      <div class="documents-summary"><span id="documentCount">2 documents available</span><span>Files open in a new tab where supported</span></div>
+      <div class="documents-grid" id="documentsGrid">
+        <article class="document-card" data-category="academic" data-search="first year grade card marks cgpa semester academic result 2025 2026">
+          <div class="document-file-icon pdf">PDF</div><div class="document-card-content"><span class="document-category">Academic records</span><h3>First-Year Academic Grade Card</h3><p>Academic year 2025–26 · Semester I &amp; II</p><div class="document-card-actions"><a href="assets/results/CS25B149-First-Year-Grade-Card-2025-26.pdf" target="_blank" rel="noopener">View document</a><a href="assets/results/CS25B149-First-Year-Grade-Card-2025-26.pdf" download>Download</a></div></div>
+        </article>
+        <article class="document-card" data-category="examination" data-search="btech semester ii special online examination 2026 notification exam 158">
+          <div class="document-file-icon pdf">PDF</div><div class="document-card-content"><span class="document-category">Examination</span><h3>B.Tech. Semester-II Special Online Examination, 2026</h3><p>Official examination notification · IITM/AA/EXAM/2026/158</p><div class="document-card-actions"><a href="assets/exam/IITM-AA-EXAM-158.pdf" target="_blank" rel="noopener">View document</a><a href="assets/exam/IITM-AA-EXAM-158.pdf" download>Download</a></div></div>
+        </article>
+      </div>
+      <div class="documents-empty" id="documentsEmpty" hidden><strong>No documents found</strong><p>Try a different search term or category.</p></div>
+      <p class="documents-note">Only documents currently published in the student portal are shown here. Additional certificates, forms and institute files will appear when they are added by the administration.</p>
+    </section>
+
+    <section id="personalInfoSection" hidden>
+      <div class="dashboard-welcome"><div><div class="eyebrow">Candidate records</div><h1>Personal Information</h1><p>Your personal profile, family details and contact information — organised in one place.</p></div><span class="pi-completion" id="piCompletion">Profile details</span></div>
+      <section class="pi-profile-hero" aria-label="Profile summary"><div class="pi-profile-avatar"><img src="assets/student.png" alt="Student profile" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span style="display:none">AK</span></div><div class="pi-profile-identity"><span class="pi-profile-kicker">STUDENT PROFILE</span><h2 id="piHeroName">Aayush Kumar</h2><p>Roll No. <strong>CS25B149</strong><span class="pi-hero-dot">•</span> B.Tech. · Computer Science and Engineering</p></div><div class="pi-profile-progress"><div class="pi-progress-top"><span>Profile completeness</span><strong id="piProgressLabel">0%</strong></div><div class="pi-progress-track"><span id="piProgressBar"></span></div><small>Complete your details to keep your student record up to date.</small></div></section>
+      <article class="pi-panel">
+        <div class="pi-panel-head"><div><span class="eyebrow">Personal profile</span><h2 id="piModeTitle">View your information</h2><p id="piModeDescription">Your saved details are displayed below.</p></div><button type="button" id="piEditButton" class="account-primary-button">Edit information</button></div>
+        <div id="piViewMode"><dl class="pi-view-grid"><div class="pi-view-group"><span>01</span><strong>Basic details</strong></div><div class="pi-view-item"><dt>Full name</dt><dd id="pi_view_full_name">—</dd></div>
+<div class="pi-view-item"><dt>Date of birth</dt><dd id="pi_view_date_of_birth">—</dd></div>
+<div class="pi-view-item"><dt>Gender</dt><dd id="pi_view_gender">—</dd></div>
+<div class="pi-view-item"><dt>Nationality</dt><dd id="pi_view_nationality">—</dd></div>
+<div class="pi-view-group"><span>02</span><strong>Family information</strong></div><div class="pi-view-item"><dt>Father's name</dt><dd id="pi_view_father_name">—</dd></div>
+<div class="pi-view-item"><dt>Mother's name</dt><dd id="pi_view_mother_name">—</dd></div>
+<div class="pi-view-item"><dt>Guardian's name (if applicable)</dt><dd id="pi_view_guardian_name">—</dd></div>
+<div class="pi-view-group"><span>03</span><strong>Addresses</strong></div><div class="pi-view-item"><dt>Permanent address</dt><dd id="pi_view_permanent_address">—</dd></div>
+<div class="pi-view-item"><dt>Permanent address – City / District</dt><dd id="pi_view_permanent_city">—</dd></div>
+<div class="pi-view-item"><dt>Permanent address – State</dt><dd id="pi_view_permanent_state">—</dd></div>
+<div class="pi-view-item"><dt>Permanent address – PIN code</dt><dd id="pi_view_permanent_pincode">—</dd></div>
+<div class="pi-view-item"><dt>Permanent address – Country</dt><dd id="pi_view_permanent_country">—</dd></div>
+<div class="pi-view-item"><dt>Correspondence address</dt><dd id="pi_view_correspondence_address">—</dd></div>
+<div class="pi-view-item"><dt>Correspondence address – City / District</dt><dd id="pi_view_correspondence_city">—</dd></div>
+<div class="pi-view-item"><dt>Correspondence address – State</dt><dd id="pi_view_correspondence_state">—</dd></div>
+<div class="pi-view-item"><dt>Correspondence address – PIN code</dt><dd id="pi_view_correspondence_pincode">—</dd></div>
+<div class="pi-view-item"><dt>Correspondence address – Country</dt><dd id="pi_view_correspondence_country">—</dd></div>
+<div class="pi-view-group"><span>04</span><strong>Contact information</strong></div><div class="pi-view-item"><dt>Primary mobile number</dt><dd id="pi_view_mobile_primary">—</dd></div>
+<div class="pi-view-item"><dt>Alternate mobile number</dt><dd id="pi_view_mobile_alternate">—</dd></div>
+<div class="pi-view-item"><dt>Father's mobile number</dt><dd id="pi_view_father_mobile">—</dd></div>
+<div class="pi-view-item"><dt>Mother's mobile number</dt><dd id="pi_view_mother_mobile">—</dd></div>
+<div class="pi-view-item"><dt>Guardian's mobile number</dt><dd id="pi_view_guardian_mobile">—</dd></div>
+<div class="pi-view-item"><dt>Personal email address</dt><dd id="pi_view_personal_email">—</dd></div>
+<div class="pi-view-item"><dt>Alternate email address</dt><dd id="pi_view_alternate_email">—</dd></div>
+<div class="pi-view-item"><dt>Institutional email address</dt><dd id="pi_view_institutional_email">—</dd></div>
+<div class="pi-view-group"><span>05</span><strong>Emergency &amp; health</strong></div><div class="pi-view-item"><dt>Emergency contact name</dt><dd id="pi_view_emergency_contact_name">—</dd></div>
+<div class="pi-view-item"><dt>Relationship with student</dt><dd id="pi_view_emergency_contact_relation">—</dd></div>
+<div class="pi-view-item"><dt>Emergency contact mobile</dt><dd id="pi_view_emergency_contact_mobile">—</dd></div>
+<div class="pi-view-item"><dt>Blood group</dt><dd id="pi_view_blood_group">—</dd></div>
+<div class="pi-view-item"><dt>Medical information / allergies (optional)</dt><dd id="pi_view_medical_notes">—</dd></div></dl><p class="pi-privacy-note">Your personal information is visible only within your authenticated student account and authorised institute systems.</p></div>
+        <form id="piEditMode" hidden>
+          <div class="pi-form-section"><h3>Personal details</h3><div class="pi-form-grid"><label class="pi-field" for="pi_full_name"><span>Full name *</span><input id="pi_full_name" name="full_name" type="text" required  autocomplete="off"></label><label class="pi-field" for="pi_date_of_birth"><span>Date of birth</span><input id="pi_date_of_birth" name="date_of_birth" type="date"   autocomplete="off"></label><label class="pi-field" for="pi_gender"><span>Gender</span><select id="pi_gender" name="gender"><option value="">Select</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select></label><label class="pi-field" for="pi_nationality"><span>Nationality</span><input id="pi_nationality" name="nationality" type="text"  value="India" autocomplete="off"></label></div></div>
+          <div class="pi-form-section"><h3>Permanent address</h3><div class="pi-form-grid"><label class="pi-field pi-wide" for="pi_permanent_address"><span>Permanent address</span><textarea id="pi_permanent_address" name="permanent_address" rows="3" ></textarea></label><label class="pi-field" for="pi_permanent_city"><span>Permanent address – City / District</span><input id="pi_permanent_city" name="permanent_city" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_permanent_state"><span>Permanent address – State</span><input id="pi_permanent_state" name="permanent_state" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_permanent_pincode"><span>Permanent address – PIN code</span><input id="pi_permanent_pincode" name="permanent_pincode" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_permanent_country"><span>Permanent address – Country</span><input id="pi_permanent_country" name="permanent_country" type="text"  value="India" autocomplete="off"></label></div></div>
+          <div class="pi-form-section"><h3>Correspondence address</h3><div class="pi-form-grid"><label class="pi-check pi-wide"><input id="pi_correspondence_same" type="checkbox" name="correspondence_same"><span>Correspondence address same as permanent</span></label><label class="pi-field pi-wide" for="pi_correspondence_address"><span>Correspondence address</span><textarea id="pi_correspondence_address" name="correspondence_address" rows="3" ></textarea></label><label class="pi-field" for="pi_correspondence_city"><span>Correspondence address – City / District</span><input id="pi_correspondence_city" name="correspondence_city" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_correspondence_state"><span>Correspondence address – State</span><input id="pi_correspondence_state" name="correspondence_state" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_correspondence_pincode"><span>Correspondence address – PIN code</span><input id="pi_correspondence_pincode" name="correspondence_pincode" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_correspondence_country"><span>Correspondence address – Country</span><input id="pi_correspondence_country" name="correspondence_country" type="text"  value="India" autocomplete="off"></label></div></div>
+          <div class="pi-form-section"><h3>Contact information</h3><div class="pi-form-grid"><label class="pi-field" for="pi_mobile_primary"><span>Primary mobile number</span><input id="pi_mobile_primary" name="mobile_primary" type="tel"   autocomplete="off"></label><label class="pi-field" for="pi_mobile_alternate"><span>Alternate mobile number</span><input id="pi_mobile_alternate" name="mobile_alternate" type="tel"   autocomplete="off"></label><label class="pi-field" for="pi_father_mobile"><span>Father's mobile number</span><input id="pi_father_mobile" name="father_mobile" type="tel"   autocomplete="off"></label><label class="pi-field" for="pi_mother_mobile"><span>Mother's mobile number</span><input id="pi_mother_mobile" name="mother_mobile" type="tel"   autocomplete="off"></label><label class="pi-field" for="pi_guardian_mobile"><span>Guardian's mobile number</span><input id="pi_guardian_mobile" name="guardian_mobile" type="tel"   autocomplete="off"></label><label class="pi-field" for="pi_personal_email"><span>Personal email address</span><input id="pi_personal_email" name="personal_email" type="email"   autocomplete="off"></label><label class="pi-field" for="pi_alternate_email"><span>Alternate email address</span><input id="pi_alternate_email" name="alternate_email" type="email"   autocomplete="off"></label><label class="pi-field" for="pi_institutional_email"><span>Institutional email address</span><input id="pi_institutional_email" name="institutional_email" type="email"  value="cs25b149.iitm@outlook.in" autocomplete="off"></label></div></div>
+          <div class="pi-form-section"><h3>Family and emergency contact</h3><div class="pi-form-grid"><label class="pi-field" for="pi_father_name"><span>Father's name</span><input id="pi_father_name" name="father_name" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_mother_name"><span>Mother's name</span><input id="pi_mother_name" name="mother_name" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_guardian_name"><span>Guardian's name (if applicable)</span><input id="pi_guardian_name" name="guardian_name" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_emergency_contact_name"><span>Emergency contact name</span><input id="pi_emergency_contact_name" name="emergency_contact_name" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_emergency_contact_relation"><span>Relationship with student</span><input id="pi_emergency_contact_relation" name="emergency_contact_relation" type="text"   autocomplete="off"></label><label class="pi-field" for="pi_emergency_contact_mobile"><span>Emergency contact mobile</span><input id="pi_emergency_contact_mobile" name="emergency_contact_mobile" type="tel"   autocomplete="off"></label></div></div>
+          <div class="pi-form-section"><h3>Additional information</h3><div class="pi-form-grid"><label class="pi-field" for="pi_blood_group"><span>Blood group</span><select id="pi_blood_group" name="blood_group"><option value="">Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option><option>Unknown</option></select></label><label class="pi-field pi-wide" for="pi_medical_notes"><span>Medical information / allergies (optional)</span><textarea id="pi_medical_notes" name="medical_notes" rows="3" ></textarea></label></div></div>
+          <div class="pi-form-actions"><button type="submit" class="account-primary-button" id="piSaveButton">Save information</button><button type="button" class="account-secondary-button" id="piCancelButton">Cancel</button><span id="piStatus" role="status"></span></div>
+          <p class="pi-privacy-note">Information is saved to your Supabase account profile. Fields marked with * are required.</p>
+        </form>
+      </article>
+    </section>
+
+    <section id="resultsSection" hidden>
+      <div class="dashboard-welcome"><div><div class="eyebrow">Academic records</div><h1>Results &amp; Gradecard</h1><p>Your published academic performance, semester grades and annual gradecard.</p></div></div>
+      <article class="result-highlight-card">
+        <div class="result-highlight-heading"><div><span class="eyebrow">Published academic record · Academic year 2025–26</span><h2>First-Year Academic Grade Card</h2><p>Aayush Kumar · Roll No. CS25B149 (21F1000498)</p></div><span class="result-published-pill">Published</span></div>
+        <div class="result-cgpa-panel">
+          <div><span>First-Year CGPA</span><strong>9.5</strong><small>Academic Year 2025–26</small></div>
+          <div class="result-semester-grade"><span>Semester I</span><strong>AA</strong><small>10 grade points</small></div>
+          <div class="result-semester-grade"><span>Semester II</span><strong>AB</strong><small>09 grade points</small></div>
+        </div>
+      </article>
+      <div class="result-semester-grid">
+        <article class="result-semester-card"><div class="result-semester-title"><h3>Semester I Performance</h3><span class="result-grade-chip">AA</span></div>
+          <div class="result-table-wrap"><table class="result-table"><thead><tr><th>Course Code</th><th>Course Title</th><th>Marks</th><th>Grade</th></tr></thead><tbody><tr><td>CS2601</td><td>C Programming</td><td>5</td><td>A</td></tr><tr><td>CS2603</td><td>Advanced C</td><td>5</td><td>A</td></tr></tbody></table></div>
+          <div class="result-grade-point"><span>Recorded grade point</span><strong>10</strong></div>
+        </article>
+        <article class="result-semester-card"><div class="result-semester-title"><h3>Semester II Performance</h3><span class="result-grade-chip">AB</span></div>
+          <div class="result-table-wrap"><table class="result-table"><thead><tr><th>Course Code</th><th>Course Title</th><th>Marks</th><th>Grade</th></tr></thead><tbody><tr><td>CS2604</td><td>Advanced C</td><td>4</td><td>B</td></tr><tr><td>CS260LX</td><td>LINUX Bash</td><td>5</td><td>A</td></tr></tbody></table></div>
+          <div class="result-grade-point"><span>Recorded grade point</span><strong>09</strong></div>
+        </article>
+      </div>
+      <div class="result-document-heading"><div><span class="eyebrow">Official document</span><h2>First-Year Grade Card PDF</h2><p>Issued on 19 October 2026 by the Academic Affairs Department.</p></div><a class="result-download-link" href="assets/results/CS25B149-First-Year-Grade-Card-2025-26.pdf" download>Download PDF ↓</a></div>
+      <div class="result-pdf-viewer"><iframe title="First-Year Academic Grade Card PDF" src="assets/results/CS25B149-First-Year-Grade-Card-2025-26.pdf#view=FitH" loading="lazy"></iframe></div>
+      <p class="result-source-note">Displayed grades, course details and CGPA are transcribed from the uploaded one-page First-Year Academic Grade Card. The PDF above is provided as the original document.</p>
+    </section>
+
+    <section id="examSection" hidden>
+      <div class="dashboard-welcome">
+        <div><div class="eyebrow">Academic calendar</div><h1>Examinations</h1>
+        <p>Examination schedules, important dates and examination-day information.</p></div>
+      </div>
+
+      <div class="exam-notice-banner">
+        <span class="exam-banner-label">Latest examination update</span>
+        <strong>B.Tech. Semester-II Special Online Examination, 2026</strong>
+        <span>Conducted on 16 October 2026 · Result notification issued 18 October 2026</span>
+        <a href="assets/exam/IITM-AA-EXAM-158.pdf" target="_blank" rel="noopener">View official result notification (PDF) ↗</a>
+      </div>
+
+      <div class="exam-section-heading"><div><span class="eyebrow">Examination history</span><h2>Schedules &amp; information</h2></div></div>
+      <div class="exam-list">
+        <article class="exam-card exam-card-latest">
+          <div class="exam-card-top"><span class="exam-type">Special online examination</span><span class="exam-state completed">Completed</span></div>
+          <h2>B.Tech. Semester-II Special Online Examination, 2026</h2>
+          <p class="exam-card-description">Special examination for students unable to appear in the regular Semester-II End Semester Examination due to institutional and administrative circumstances.</p>
+          <div class="exam-facts">
+            <div><span>Examination date</span><strong>16 October 2026</strong></div>
+            <div><span>Platform</span><strong>IIT Madras On-Exam Platform</strong></div>
+            <div><span>Proctoring</span><strong>AI-assisted online proctoring</strong></div>
+            <div><span>Result notification</span><strong>18 October 2026</strong></div>
+          </div>
+          <details class="exam-instructions" open>
+            <summary>Examination instructions &amp; conditions</summary>
+            <ul>
+              <li>The examination was conducted through the IIT Madras On-Exam Platform.</li>
+              <li>AI-assisted online proctoring was used during the examination.</li>
+              <li>The examination was administered in accordance with the examination regulations and directions approved by the Competent Academic Authority.</li>
+              <li>Students were required to follow the applicable institute examination regulations and directions of the Competent Academic Authority.</li>
+            </ul>
+          </details>
+          <div class="exam-card-footer"><span>Official reference: IITM/AA/EXAM/2026/158</span><a href="assets/exam/IITM-AA-EXAM-158.pdf" target="_blank" rel="noopener">Open notification PDF ↗</a></div>
+        </article>
+
+        <article class="exam-card">
+          <div class="exam-card-top"><span class="exam-type">Special online examination</span><span class="exam-state completed">Completed</span></div>
+          <h2>Previous Special Online Examination, 2026</h2>
+          <p class="exam-card-description">Previous examination sitting. The examination-day conditions and instructions are shown here as requested.</p>
+          <div class="exam-facts">
+            <div><span>Examination date</span><strong>4 August 2026</strong></div>
+            <div><span>Platform</span><strong>IIT Madras On-Exam Platform</strong></div>
+            <div><span>Proctoring</span><strong>AI-assisted online proctoring</strong></div>
+            <div><span>Administration</span><strong>Institute examination regulations</strong></div>
+          </div>
+          <details class="exam-instructions">
+            <summary>Examination instructions &amp; conditions</summary>
+            <ul>
+              <li>The examination was conducted through the IIT Madras On-Exam Platform.</li>
+              <li>AI-assisted online proctoring was used during the examination.</li>
+              <li>The examination was administered in accordance with the examination regulations and directions approved by the Competent Academic Authority.</li>
+              <li>Students were required to follow the applicable institute examination regulations and directions of the Competent Academic Authority.</li>
+            </ul>
+          </details>
+          <div class="exam-card-footer"><span>Previous examination · 4 August 2026</span></div>
+        </article>
+      </div>
+      <p class="exam-source-note">Note: The latest examination details above are taken from the Academic Affairs Department result notification dated 18 October 2026. The source notification confirms the examination date, platform and AI-assisted proctoring, but does not specify the examination time, duration, venue or detailed device/room rules. Those details have therefore not been invented.</p>
+    </section>
+
+    <div class="dashboard-placeholder" id="sectionMessage">
+      Your dashboard information is displayed here. Select a section from the navigation panel to continue.
+    </div>
+  </main>
+  </div><!-- /.dashboard-workspace -->
+<footer class="institution-footer">
+  <div class="institution-footer-main">
+    <div class="institution-footer-identity">
+      <img src="assets/logo.png" alt="Indian Institute of Technology Madras emblem" class="institution-footer-logo" />
+      <div class="institution-footer-name">
+        <strong>INDIAN INSTITUTE OF TECHNOLOGY MADRAS</strong>
+        <span lang="hi">भारतीय प्रौद्योगिकी संस्थान मद्रास</span>
+        <span lang="ta">இந்திய தொழில்நுட்பக் கழகம் மெட்ராஸ்</span>
+        <small>Excellence in Education · Research · Innovation</small>
+      </div>
+    </div>
+    <div class="institution-footer-links">
+      <div class="institution-footer-column">
+        <h3>PORTAL</h3>
+        <a href="index.html">Student Login</a>
+        <a href="dashboard.html#overview">Candidate Dashboard</a>
+        <a href="dashboard.html#attendance">Attendance</a>
+        <a href="dashboard.html#notices">Notices</a>
+      </div>
+      <div class="institution-footer-column">
+        <h3>ACADEMICS</h3>
+        <a href="dashboard.html#assignment">Assignments</a>
+        <a href="dashboard.html#exam">Examinations</a>
+        <a href="dashboard.html#results">Results</a>
+        <a href="dashboard.html#documents">Documents</a>
+      </div>
+      <div class="institution-footer-column">
+        <h3>INFORMATION</h3>
+        <a href="#privacy" data-footer-info="Privacy information will be published by the institute.">Privacy</a>
+        <a href="#accessibility" data-footer-info="Accessibility information will be published by the institute.">Accessibility</a>
+        <a href="#help" data-footer-info="For portal assistance, contact the institute's authorised support desk.">Help &amp; Support</a>
+        <a href="#contact" data-footer-info="Official contact information should be verified on the institute website.">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="institution-footer-bottom">
+    <span>© <span class="footer-year"></span> Indian Institute of Technology Madras. All rights reserved.</span>
+    <span class="footer-bottom-note">Official Student Portal <i aria-hidden="true"></i> Secure Institutional Access</span>
+  </div>
+</footer>
+</div>
+
+<script>
+  const date = new Date();
+  document.querySelectorAll('.footer-year').forEach(el => el.textContent = date.getFullYear());
+  document.querySelectorAll('[data-footer-info]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const message = document.getElementById('sectionMessage');
+      if (message) {
+        message.hidden = false;
+        message.textContent = link.dataset.footerInfo;
+      }
+    });
+  });
+  document.getElementById('currentDate').textContent = date.toLocaleDateString('en-IN', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+  });
+
+  const links = document.querySelectorAll('.dashboard-nav a');
+  const overview = document.getElementById('overviewSection');
+  const attendance = document.getElementById('attendanceSection');
+  const notices = document.getElementById('noticesSection');
+  const assignments = document.getElementById('assignmentSection');
+  const exams = document.getElementById('examSection');
+  const results = document.getElementById('resultsSection');
+  const account = document.getElementById('accountSection');
+  const documents = document.getElementById('documentsSection');
+  const personalInfo = document.getElementById('personalInfoSection');
+  const message = document.getElementById('sectionMessage');
+  const breadcrumb = document.getElementById('breadcrumbCurrent');
+
+  function showSection(section) {
+    links.forEach(item => {
+      const selected = item.dataset.section === section;
+      item.classList.toggle('active', selected);
+      if (selected) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+    const isOverview = section === 'Overview';
+    const isAttendance = section === 'Attendance';
+    const isNotices = section === 'Notices';
+    const isAssignments = section === 'Assignment';
+    const isExam = section === 'Exam';
+    const isResults = section === 'Results & Gradecard';
+    const isAccount = section === 'Account';
+    const isDocuments = section === 'Documents';
+    const isPersonalInfo = section === 'Personal Info';
+    overview.hidden = !isOverview;
+    attendance.hidden = !isAttendance;
+    notices.hidden = !isNotices;
+    assignments.hidden = !isAssignments;
+    exams.hidden = !isExam;
+    results.hidden = !isResults;
+    account.hidden = !isAccount;
+    documents.hidden = !isDocuments;
+    personalInfo.hidden = !isPersonalInfo;
+    message.hidden = isOverview || isAttendance || isNotices || isAssignments || isExam || isResults || isAccount || isDocuments || isPersonalInfo;
+    breadcrumb.textContent = section;
+    if (!isOverview && !isAttendance && !isNotices && !isAssignments && !isExam && !isResults && !isAccount && !isDocuments && !isPersonalInfo) message.textContent = section + ' section will be added in the next development stage.';
+    if (isNotices) loadNotices();
+    history.replaceState(null, '', '#' + section.toLowerCase().replaceAll(' ', '-'));
+  }
+
+  const documentSearch = document.getElementById('documentSearch');
+  const documentCategory = document.getElementById('documentCategory');
+  function filterDocuments() {
+    const query = (documentSearch?.value || '').trim().toLowerCase();
+    const category = documentCategory?.value || 'all';
+    const cards = [...document.querySelectorAll('#documentsGrid .document-card')];
+    let visible = 0;
+    cards.forEach(card => {
+      const match = (category === 'all' || card.dataset.category === category) &&
+        (!query || (card.dataset.search + ' ' + card.textContent).toLowerCase().includes(query));
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    document.getElementById('documentCount').textContent = `${visible} document${visible === 1 ? '' : 's'} available`;
+    document.getElementById('documentsEmpty').hidden = visible !== 0;
+  }
+  documentSearch?.addEventListener('input', filterDocuments);
+  documentCategory?.addEventListener('change', filterDocuments);
+
+    links.forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    showSection(link.dataset.section);
+  }));
+
+  document.querySelectorAll('.dashboard-quick-card[data-open-section]').forEach(card => {
+    card.addEventListener('click', () => showSection(card.dataset.openSection));
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showSection(card.dataset.openSection); }
+    });
+  });
+
+
+  // Notices are listed in assets/notices/notices.json. Browsers cannot
+  // enumerate a folder directly, so this manifest is the publication index.
+  const noticeList = document.getElementById('noticesList');
+  const noticePreview = document.getElementById('noticePreviewPanel');
+  const noticeSearch = document.getElementById('noticeSearch');
+  const noticeSort = document.getElementById('noticeSort');
+  const noticeCount = document.getElementById('noticesCount');
+  const noticeResultsLabel = document.getElementById('noticeResultsLabel');
+  let allNotices = [];
+  let noticesLoaded = false;
+  let selectedNoticeId = null;
+
+  function noticeNumber(notice) {
+    const match = String(notice.file || '').match(/(\d+)(?=\.[^.]+$)/);
+    return match ? Number(match[1]) : Number(notice.number || 0);
+  }
+  function noticeDate(notice) {
+    const value = Date.parse(notice.date || '');
+    return Number.isNaN(value) ? 0 : value;
+  }
+  function noticeFileUrl(file) {
+    return 'assets/notices/' + String(file || '').split('/').map(encodeURIComponent).join('/');
+  }
+  function escapeNoticeText(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[char]);
+  }
+  function formatNoticeDate(value) {
+    if (!value) return 'Date not specified';
+    const dateValue = new Date(value + 'T00:00:00');
+    return Number.isNaN(dateValue.getTime()) ? value :
+      dateValue.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function getSortedNotices(items) {
+    const sorted = [...items];
+    switch (noticeSort.value) {
+      case 'number-asc': return sorted.sort((a,b) => noticeNumber(a)-noticeNumber(b));
+      case 'date-desc': return sorted.sort((a,b) => noticeDate(b)-noticeDate(a) || noticeNumber(b)-noticeNumber(a));
+      case 'date-asc': return sorted.sort((a,b) => noticeDate(a)-noticeDate(b) || noticeNumber(a)-noticeNumber(b));
+      case 'title-asc': return sorted.sort((a,b) => String(a.title).localeCompare(String(b.title)));
+      case 'manual': return sorted.sort((a,b) => (a.order ?? 999999)-(b.order ?? 999999));
+      case 'number-desc':
+      default: return sorted.sort((a,b) => noticeNumber(b)-noticeNumber(a));
+    }
+  }
+  function renderNoticePreview(notice) {
+    selectedNoticeId = notice.id;
+    const url = noticeFileUrl(notice.file);
+    const ext = (notice.file.split('.').pop() || '').toLowerCase();
+    let preview = '';
+    if (ext === 'pdf') {
+      preview = `<iframe class="notice-preview-frame" src="${url}#toolbar=1&navpanes=0" title="${escapeNoticeText(notice.title)}"></iframe>`;
+    } else if (['png','jpg','jpeg','webp','gif'].includes(ext)) {
+      preview = `<img class="notice-preview-image" src="${url}" alt="${escapeNoticeText(notice.title)}"/>`;
+    } else {
+      preview = `<div class="notice-preview-unsupported"><strong>Preview unavailable</strong><p>This file type cannot be previewed inside the portal. Use Open original file to view it.</p></div>`;
+    }
+    noticePreview.innerHTML = `
+      <div class="notice-preview-heading">
+        <div><span class="notice-preview-kicker">NOTICE PREVIEW</span><h2>${escapeNoticeText(notice.title)}</h2>
+        <p>${escapeNoticeText(notice.category || 'General')} · ${formatNoticeDate(notice.date)} · Notice No. ${noticeNumber(notice) || '—'}</p></div>
+        <button type="button" class="notice-preview-close" id="noticePreviewClose" aria-label="Close preview">×</button>
+      </div>
+      <div class="notice-preview-content">${preview}</div>
+      <div class="notice-preview-actions">
+        <a href="${url}" target="_blank" rel="noopener">Open original file ↗</a>
+        <a href="${url}" download>Download notice ↓</a>
+      </div>`;
+    document.querySelectorAll('.notice-card').forEach(card => card.classList.toggle('selected', card.dataset.noticeId === notice.id));
+    document.getElementById('noticePreviewClose').addEventListener('click', () => {
+      selectedNoticeId = null;
+      noticePreview.innerHTML = `<div class="notice-preview-placeholder"><div class="notice-preview-placeholder-icon">▤</div><strong>Notice preview</strong><p>Select a notice from the list to read it here.</p></div>`;
+      document.querySelectorAll('.notice-card').forEach(card => card.classList.remove('selected'));
+    });
+  }
+  function renderNotices() {
+    const query = noticeSearch.value.trim().toLowerCase();
+    const filtered = getSortedNotices(allNotices.filter(notice =>
+      [notice.title, notice.category, notice.file, notice.description, noticeNumber(notice)]
+        .join(' ').toLowerCase().includes(query)
+    ));
+    noticeCount.textContent = `${allNotices.length} ${allNotices.length === 1 ? 'notice' : 'notices'}`;
+    noticeResultsLabel.textContent = `${filtered.length} ${filtered.length === 1 ? 'notice' : 'notices'} shown`;
+    if (!filtered.length) {
+      noticeList.innerHTML = `<div class="notices-empty"><strong>No notices found</strong><p>Try another search or reset your filters.</p></div>`;
+      return;
+    }
+    noticeList.innerHTML = filtered.map(notice => {
+      const number = noticeNumber(notice);
+      const id = String(notice.id || notice.file);
+      const category = escapeNoticeText(notice.category || 'General');
+      const description = notice.description ? `<p>${escapeNoticeText(notice.description)}</p>` : '';
+      return `<article class="notice-card ${selectedNoticeId === id ? 'selected' : ''}" data-notice-id="${escapeNoticeText(id)}">
+        <div class="notice-card-number"><span>NOTICE</span><strong>${number || '—'}</strong></div>
+        <div class="notice-card-body"><div class="notice-card-meta"><span>${category}</span><time>${formatNoticeDate(notice.date)}</time></div>
+          <h3>${escapeNoticeText(notice.title || `Notice ${number}`)}</h3>${description}
+          <div class="notice-card-actions"><button type="button" class="notice-preview-button" data-preview-notice="${escapeNoticeText(id)}">Preview notice</button><a href="${noticeFileUrl(notice.file)}" target="_blank" rel="noopener">Open file ↗</a></div>
+        </div></article>`;
+    }).join('');
+    noticeList.querySelectorAll('[data-preview-notice]').forEach(button => button.addEventListener('click', () => {
+      const notice = allNotices.find(item => String(item.id || item.file) === button.dataset.previewNotice);
+      if (notice) renderNoticePreview(notice);
+    }));
+  }
+  
+  
+async function loadNotices() {
+    if (noticesLoaded) return;
+
+    try {
+        const response = await fetch('assets/notices/notices.json');
+
+        if (!response.ok) {
+            throw new Error('Could not load notices.json. Run generate_notices.py first.');
+        }
+
+        const notices = await response.json();
+
+        allNotices = notices.map(notice => ({
+            ...notice,
+            id: notice.id || notice.file,
+            title: notice.title || notice.file.replace(/\.[^/.]+$/, '')
+        }));
+
+        noticesLoaded = true;
+        renderNotices();
+
+    } catch (error) {
+        console.error('Notice loading failed:', error);
+
+        noticeList.innerHTML = `
+            <div class="notices-empty">
+                <strong>Unable to load notices</strong>
+                <p>${escapeNoticeText(error.message)}</p>
+                <p>Check that assets/notices/notices.json exists.</p>
+            </div>
+        `;
+
+        noticeCount.textContent = 'Unable to load notices';
+    }
+}
+
+
+  noticeSearch.addEventListener('input', renderNotices);
+  noticeSort.addEventListener('change', renderNotices);
+  document.getElementById('noticeReset').addEventListener('click', () => {
+    noticeSearch.value = '';
+    noticeSort.value = 'number-desc';
+    renderNotices();
+  });
+
+  const initialHash = window.location.hash.slice(1);
+  const initialSection = initialHash === 'attendance' ? 'Attendance' : initialHash === 'notices' ? 'Notices' : initialHash === 'assignment' ? 'Assignment' : initialHash === 'exam' ? 'Exam' : (initialHash === 'results' || initialHash === 'results-&-gradecard') ? 'Results & Gradecard' : 'Overview';
+  showSection(initialSection);
+</script>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const supabase = createClient('https://huzqfyrvgkjmnvsnajjs.supabase.co', 'sb_publishable_QzE8YG6ev_opnfz5MCqEFA_1hu8NGmi');
+
+const $ = (id) => document.getElementById(id);
+const setStatus = (message, isError = false) => {
+  const el = $('assignmentLoadStatus');
+  if (el) { el.textContent = message; el.classList.toggle('is-error', isError); }
+};
+const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+if (sessionError || !session) {
+  window.location.replace('index.html');
+} else {
+  const user = session.user;
+  const metadata = user.user_metadata || {};
+
+  // Candidate-editable personal information, stored in Supabase user metadata.
+  const personalInfoFields = ["full_name", "date_of_birth", "gender", "nationality", "father_name", "mother_name", "guardian_name", "permanent_address", "permanent_city", "permanent_state", "permanent_pincode", "permanent_country", "correspondence_same", "correspondence_address", "correspondence_city", "correspondence_state", "correspondence_pincode", "correspondence_country", "mobile_primary", "mobile_alternate", "father_mobile", "mother_mobile", "guardian_mobile", "personal_email", "alternate_email", "institutional_email", "emergency_contact_name", "emergency_contact_relation", "emergency_contact_mobile", "blood_group", "medical_notes"];
+  const personalInfoForm = $('piEditMode');
+  const personalInfoView = $('piViewMode');
+  const personalInfoData = { ...(metadata.personal_info || {}) };
+  const personalInfoLabels = {"full_name": "Full name", "date_of_birth": "Date of birth", "gender": "Gender", "nationality": "Nationality", "father_name": "Father's name", "mother_name": "Mother's name", "guardian_name": "Guardian's name (if applicable)", "permanent_address": "Permanent address", "permanent_city": "Permanent address \u2013 City / District", "permanent_state": "Permanent address \u2013 State", "permanent_pincode": "Permanent address \u2013 PIN code", "permanent_country": "Permanent address \u2013 Country", "correspondence_address": "Correspondence address", "correspondence_city": "Correspondence address \u2013 City / District", "correspondence_state": "Correspondence address \u2013 State", "correspondence_pincode": "Correspondence address \u2013 PIN code", "correspondence_country": "Correspondence address \u2013 Country", "mobile_primary": "Primary mobile number", "mobile_alternate": "Alternate mobile number", "father_mobile": "Father's mobile number", "mother_mobile": "Mother's mobile number", "guardian_mobile": "Guardian's mobile number", "personal_email": "Personal email address", "alternate_email": "Alternate email address", "institutional_email": "Institutional email address", "emergency_contact_name": "Emergency contact name", "emergency_contact_relation": "Relationship with student", "emergency_contact_mobile": "Emergency contact mobile", "blood_group": "Blood group", "medical_notes": "Medical information / allergies (optional)"};
+  const piInput = key => $('pi_' + key);
+  function piSetMode(editing) {
+    personalInfoForm.hidden = !editing;
+    personalInfoView.hidden = editing;
+    $('piEditButton').hidden = editing;
+    $('piModeTitle').textContent = editing ? 'Edit your information' : 'View your information';
+    $('piModeDescription').textContent = editing ? 'Update the fields below, then save your changes.' : 'Your saved details are displayed below.';
+  }
+  function piRender() {
+    personalInfoFields.forEach(key => {
+      const input = piInput(key);
+      if (!input) return;
+      if (input.type === 'checkbox') input.checked = !!personalInfoData[key];
+      else if (personalInfoData[key] !== undefined) input.value = personalInfoData[key];
+    });
+    const sameAddress = !!personalInfoData.correspondence_same;
+    ['address','city','state','pincode','country'].forEach(part => {
+      const target = piInput('correspondence_' + part);
+      if (sameAddress) target.value = piInput('permanent_' + part).value;
+      target.disabled = sameAddress;
+    });
+    Object.keys(personalInfoLabels).forEach(key => {
+      const value = personalInfoData[key];
+      const el = $('pi_view_' + key);
+      if (el) el.textContent = value ? String(value) : 'Not provided';
+    });
+    const provided = personalInfoFields.filter(key => key !== 'correspondence_same' && personalInfoData[key]).length;
+    const total = personalInfoFields.length - 1;
+    const percent = Math.round((provided / total) * 100);
+    $('piCompletion').textContent = `${provided} of ${total} fields completed`;
+    $('piProgressLabel').textContent = `${percent}%`;
+    $('piProgressBar').style.width = `${percent}%`;
+    $('piHeroName').textContent = personalInfoData.full_name || 'Aayush Kumar';
+  }
+  $('piEditButton').addEventListener('click', () => piSetMode(true));
+  $('piCancelButton').addEventListener('click', () => { piRender(); piSetMode(false); $('piStatus').textContent = ''; });
+  $('pi_correspondence_same').addEventListener('change', event => {
+    const disabled = event.target.checked;
+    ['address','city','state','pincode','country'].forEach(part => {
+      const el = piInput('correspondence_' + part);
+      if (disabled) el.value = piInput('permanent_' + part).value;
+      el.disabled = disabled;
+    });
+  });
+  personalInfoForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const status = $('piStatus'); const save = $('piSaveButton');
+    const next = {};
+    personalInfoFields.forEach(key => {
+      const input = piInput(key);
+      if (input) next[key] = input.type === 'checkbox' ? input.checked : input.value.trim();
+    });
+    if (next.correspondence_same) {
+      ['address','city','state','pincode','country'].forEach(part => next['correspondence_' + part] = next['permanent_' + part] || '');
+    }
+    if (!next.full_name) { status.textContent = 'Please enter your full name.'; return; }
+    save.disabled = true; status.textContent = 'Saving your information…';
+    const { data, error } = await supabase.auth.updateUser({ data: { personal_info: next } });
+    save.disabled = false;
+    if (error) { status.textContent = error.message || 'Unable to save. Please try again.'; status.classList.add('is-error'); return; }
+    Object.assign(personalInfoData, next);
+    status.classList.remove('is-error'); status.textContent = 'Your personal information has been saved.';
+    piRender(); piSetMode(false);
+  });
+  piRender(); piSetMode(false);
+  const displayName = metadata.display_name || metadata.full_name || metadata.name || 'Student';
+  document.querySelector('.portal-student-details strong').textContent = displayName;
+  document.querySelector('.portal-student-details span').textContent =
+    'Student' + (metadata.roll_number ? ' · ' + metadata.roll_number : '');
+  document.querySelector('.portal-student-initials').textContent =
+    displayName.split(/\s+/).slice(0,2).map(part => part[0]).join('').toUpperCase();
+  const profileImage = document.querySelector('.portal-student-photo img');
+  if (metadata.avatar_url) { profileImage.src = metadata.avatar_url; profileImage.style.display = 'block'; }
+  const welcome = document.querySelector('.dashboard-welcome h1');
+  if (welcome && welcome.textContent.includes('Aayush Kumar')) welcome.textContent = `Welcome, ${displayName}.`;
+  // Account page identity and login information.
+  const accountName = metadata.full_name || metadata.name || 'Aayush Kumar';
+  $('accountDisplayName').textContent = displayName;
+  $('accountName').textContent = accountName;
+  $('accountRollLine').textContent = 'CS25B149 · 21F1000498';
+  $('accountEmail').textContent = 'cs25b149.iitm@outlook.in';
+  $('accountCreated').textContent = '03 August 2026';
+  const formatAccountDate = value => value ? new Date(value).toLocaleString('en-IN', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }) : 'Not available';
+  $('accountLastSignIn').textContent = formatAccountDate(user.last_sign_in_at);
+  $('accountDisplayNameInput').value = displayName;
+  const avatarFallback = $('accountAvatarFallback');
+  const accountPhoto = $('accountProfilePhoto');
+  const setAvatarFallback = () => { accountPhoto.style.display = 'none'; avatarFallback.hidden = false; avatarFallback.textContent = displayName.split(/\s+/).slice(0,2).map(part => part[0]).join('').toUpperCase(); };
+  accountPhoto.alt = displayName + ' profile photograph';
+  accountPhoto.addEventListener('error', setAvatarFallback);
+  if (metadata.avatar_url) accountPhoto.src = metadata.avatar_url;
+  if (accountPhoto.complete && accountPhoto.naturalWidth === 0) setAvatarFallback();
+  else accountPhoto.addEventListener('load', () => { accountPhoto.style.display = 'block'; avatarFallback.hidden = true; }, { once: true });
+
+  $('accountDisplayNameForm').addEventListener('submit', async event => {
+    event.preventDefault();
+    const nextName = $('accountDisplayNameInput').value.trim();
+    const status = $('accountDisplayNameStatus');
+    status.textContent = ''; status.classList.remove('error');
+    if (!nextName) { status.textContent = 'Please enter a display name.'; status.classList.add('error'); return; }
+    const button = $('accountDisplayNameForm').querySelector('button[type="submit"]');
+    button.disabled = true; button.textContent = 'Saving…';
+    const { data, error } = await supabase.auth.updateUser({ data: { ...metadata, display_name: nextName } });
+    button.disabled = false; button.textContent = 'Save display name';
+    if (error) { status.textContent = 'Could not save display name: ' + error.message; status.classList.add('error'); return; }
+    const savedName = data.user?.user_metadata?.display_name || nextName;
+    document.querySelector('.portal-student-details strong').textContent = savedName;
+    document.querySelector('.portal-student-initials').textContent = savedName.split(/\s+/).slice(0,2).map(part => part[0]).join('').toUpperCase();
+    const welcomeHeading = document.querySelector('#overviewSection .dashboard-welcome h1');
+    if (welcomeHeading) welcomeHeading.textContent = `Welcome, ${savedName}.`;
+    $('accountDisplayName').textContent = savedName;
+    $('accountDisplayNameInput').value = savedName;
+    status.textContent = 'Display name saved. Your dashboard greeting has been updated.';
+  });
+
+  // Save adjustable image framing on this device.
+  const cropKey = 'studentPortalProfileCrop';
+  let crop = { zoom: 100, x: 50, y: 50 };
+  try { crop = { ...crop, ...JSON.parse(localStorage.getItem(cropKey) || '{}') }; } catch (_) {}
+  const applyCrop = () => {
+    accountPhoto.style.objectPosition = `${crop.x}% ${crop.y}%`;
+    accountPhoto.style.transform = `scale(${crop.zoom / 100})`;
+    $('accountPhotoZoom').value = crop.zoom; $('accountPhotoX').value = crop.x; $('accountPhotoY').value = crop.y;
+    $('accountPhotoZoomValue').textContent = `${crop.zoom}%`;
+    try { localStorage.setItem(cropKey, JSON.stringify(crop)); } catch (_) {}
+  };
+  [['accountPhotoZoom','zoom'],['accountPhotoX','x'],['accountPhotoY','y']].forEach(([id,key]) => $(id).addEventListener('input', event => { crop[key] = Number(event.target.value); applyCrop(); }));
+  $('accountPhotoReset').addEventListener('click', () => { crop = { zoom: 100, x: 50, y: 50 }; applyCrop(); $('accountPhotoStatus').textContent = 'Photo framing reset.'; });
+  applyCrop();
+
+  $('accountPasswordForm').addEventListener('submit', async event => {
+    event.preventDefault();
+    const password = $('accountNewPassword').value;
+    const confirmation = $('accountConfirmPassword').value;
+    const status = $('accountPasswordStatus');
+    status.textContent = '';
+    status.classList.remove('error');
+    if (password.length < 8) { status.textContent = 'Use a password with at least 8 characters.'; status.classList.add('error'); return; }
+    if (password !== confirmation) { status.textContent = 'The passwords do not match.'; status.classList.add('error'); return; }
+    const button = $('accountPasswordForm').querySelector('button[type="submit"]');
+    button.disabled = true; button.textContent = 'Updating…';
+    const { error } = await supabase.auth.updateUser({ password });
+    button.disabled = false; button.textContent = 'Update password';
+    if (error) { status.textContent = 'Could not update password: ' + error.message; status.classList.add('error'); }
+    else { status.textContent = 'Password updated successfully.'; $('accountPasswordForm').reset(); }
+  });
+  $('accountLogoutButton').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    window.location.replace('index.html');
+  });
+
+  $('headerLogout').addEventListener('click', async (event) => {
+    event.preventDefault();
+    await supabase.auth.signOut();
+    window.location.replace('index.html');
+  });
+  document.querySelectorAll('.dashboard-nav a[href="index.html"]').forEach(link => link.addEventListener('click', async e => {
+    e.preventDefault(); await supabase.auth.signOut(); window.location.replace('index.html');
+  }));
+  $('assignmentSubjectFilter').addEventListener('change', renderAssignments);
+  let assignmentRows = [];
+  let submissionByAssignment = {};
+
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function dueLabel(value) {
+    if (!value) return 'No deadline specified';
+    return new Date(value).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+  }
+  function renderAssignments() {
+    const filter = $('assignmentSubjectFilter').value;
+    const list = $('assignmentList');
+    const rows = assignmentRows.filter(row => !filter || row.subject === filter);
+    const now = Date.now();
+    let submitted = 0, overdue = 0;
+    rows.forEach(row => {
+      const submission = submissionByAssignment[row.id];
+      if (submission) submitted++;
+      else if (row.due_at && new Date(row.due_at).getTime() < now) overdue++;
+    });
+    $('assignmentTotal').textContent = rows.length;
+    $('assignmentSubmitted').textContent = submitted;
+    $('assignmentOverdue').textContent = overdue;
+    $('assignmentPending').textContent = rows.length - submitted - overdue;
+    if (!rows.length) {
+      list.innerHTML = '<div class="assignment-empty"><strong>No published assignments yet</strong><p>New assignments published by the institute will appear here.</p></div>';
+      return;
+    }
+    list.innerHTML = rows.map(row => {
+      const submission = submissionByAssignment[row.id];
+      const isOverdue = !submission && row.due_at && new Date(row.due_at).getTime() < now;
+      const status = submission ? 'Submitted' : isOverdue ? 'Overdue' : 'Pending';
+      const questionLink = row.question_file_path ? `<button type="button" class="assignment-download" data-question="${escapeHtml(row.question_file_path)}">Download question paper</button>` : '';
+      const submittedLine = submission ? `<div class="assignment-submitted-line"><span>Submitted ${dueLabel(submission.submitted_at)} · ${escapeHtml(submission.original_file_name)}</span><button type="button" class="assignment-view-submission" data-submission="${escapeHtml(submission.file_path)}">View submitted file</button></div>` : '';
+      const canSubmit = !submission || (row.allow_resubmission && (!row.due_at || new Date(row.due_at).getTime() >= now));
+      return `<article class="assignment-card">
+        <div class="assignment-card-top"><span class="assignment-subject">${escapeHtml(row.subject)}</span><span class="assignment-status ${status.toLowerCase()}">${status}</span></div>
+        <h2>${escapeHtml(row.title)}</h2>
+        <p>${escapeHtml(row.description || 'No additional description provided.')}</p>
+        ${row.instructions ? `<details class="assignment-instructions"><summary>Read instructions</summary><p>${escapeHtml(row.instructions)}</p></details>` : ''}
+        <div class="assignment-meta"><span>Due: ${dueLabel(row.due_at)}</span><span>${row.max_marks ? escapeHtml(row.max_marks) + ' marks' : 'Marks not specified'}</span></div>
+        ${questionLink}${submittedLine}
+        ${canSubmit ? `<form class="assignment-upload-form" data-assignment="${row.id}">
+          <label>Upload completed assignment <input type="file" name="submission" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required></label>
+          <small>Accepted: PDF, DOC, DOCX, JPG, PNG · Maximum 20 MB</small>
+          <button type="submit">${submission ? 'Resubmit assignment' : 'Submit assignment'}</button>
+          <span class="assignment-form-message" role="status"></span>
+        </form>` : ''}
+      </article>`;
+    }).join('');
+    list.querySelectorAll('.assignment-upload-form').forEach(form => form.addEventListener('submit', submitAssignment));
+    list.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => downloadQuestion(button.dataset.question)));
+    list.querySelectorAll('[data-submission]').forEach(button => button.addEventListener('click', () => openSubmission(button.dataset.submission)));
+  }
+  async function openSubmission(path) {
+    const { data, error } = await supabase.storage.from('assignment-submissions').createSignedUrl(path, 60);
+    if (error) { setStatus('Unable to open your submission: ' + error.message, true); return; }
+    window.open(data.signedUrl, '_blank', 'noopener');
+  }
+  async function downloadQuestion(path) {
+    const { data, error } = await supabase.storage.from('assignment-materials').createSignedUrl(path, 60);
+    if (error) { setStatus('Unable to open question paper: ' + error.message, true); return; }
+    window.open(data.signedUrl, '_blank', 'noopener');
+  }
+  async function submitAssignment(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const file = form.querySelector('input[type=file]').files[0];
+    const assignmentId = form.dataset.assignment;
+    const row = assignmentRows.find(item => item.id === assignmentId);
+    const message = form.querySelector('.assignment-form-message');
+    const button = form.querySelector('button[type=submit]');
+    if (!file || !row) return;
+    const allowed = ['pdf','doc','docx','jpg','jpeg','png'];
+    const ext = file.name.split('.').pop().toLowerCase();
+    if (!allowed.includes(ext)) { message.textContent = 'This file type is not allowed.'; return; }
+    if (file.size > 20 * 1024 * 1024) { message.textContent = 'File exceeds the 20 MB limit.'; return; }
+    if (row.due_at && Date.now() > new Date(row.due_at).getTime()) { message.textContent = 'The submission deadline has passed.'; return; }
+    button.disabled = true; message.textContent = 'Uploading securely…';
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+    const path = `${user.id}/${assignmentId}/${Date.now()}-${safeName}`;
+    const { error: uploadError } = await supabase.storage.from('assignment-submissions').upload(path, file, { contentType: file.type || undefined, upsert: false });
+    if (uploadError) { button.disabled = false; message.textContent = uploadError.message; return; }
+    const existing = submissionByAssignment[assignmentId];
+    const payload = {
+      assignment_id: assignmentId, student_id: user.id, file_path: path,
+      original_file_name: file.name, file_size_bytes: file.size,
+      mime_type: file.type || null, submitted_at: new Date().toISOString(),
+      status: row.due_at && Date.now() > new Date(row.due_at).getTime() ? 'late' : 'submitted'
+    };
+    const query = existing
+      ? supabase.from('assignment_submissions').update(payload).eq('id', existing.id)
+      : supabase.from('assignment_submissions').insert(payload);
+    const { error: recordError } = await query;
+    if (recordError) {
+      await supabase.storage.from('assignment-submissions').remove([path]);
+      button.disabled = false; message.textContent = 'File uploaded but submission record failed: ' + recordError.message; return;
+    }
+    message.textContent = 'Assignment submitted successfully.';
+    await loadAssignments();
+  }
+  async function loadAssignments() {
+    setStatus('Loading published assignments…');
+    const [{ data: assignmentsData, error: assignmentsError }, { data: submissionsData, error: submissionsError }] = await Promise.all([
+      supabase.from('assignments').select('*').eq('is_published', true).order('due_at', { ascending: true }),
+      supabase.from('assignment_submissions').select('*').eq('student_id', user.id)
+    ]);
+    if (assignmentsError) { setStatus('Could not load assignments: ' + assignmentsError.message, true); $('assignmentList').innerHTML = '<div class="assignment-empty">Unable to load assignments. Check the database policies.</div>'; return; }
+    if (submissionsError) { setStatus('Could not load submissions: ' + submissionsError.message, true); return; }
+    assignmentRows = assignmentsData || [];
+    submissionByAssignment = Object.fromEntries((submissionsData || []).map(item => [item.assignment_id, item]));
+    const subjects = [...new Set(assignmentRows.map(item => item.subject).filter(Boolean))].sort();
+    $('assignmentSubjectFilter').innerHTML = '<option value="">All subjects</option>' + subjects.map(subject => `<option value="${escapeHtml(subject)}">${escapeHtml(subject)}</option>`).join('');
+    setStatus(`${assignmentRows.length} published assignment(s)`);
+    renderAssignments();
+  }
+  await loadAssignments();
+  window.dispatchEvent(new Event('portal:ready'));
+}
+</script>
+
+
+<script>
+(() => {
+  const root = document.getElementById('officialAssignmentCountdown');
+  if (!root) return;
+  const deadline = new Date(root.dataset.deadline).getTime();
+  const label = document.getElementById('officialAssignmentCountdownLabel');
+  const fields = {
+    days: document.getElementById('assignmentDays'),
+    hours: document.getElementById('assignmentHours'),
+    minutes: document.getElementById('assignmentMinutes'),
+    seconds: document.getElementById('assignmentSeconds')
+  };
+  const update = () => {
+    const remaining = deadline - Date.now();
+    if (remaining <= 0) {
+      Object.values(fields).forEach(node => node.textContent = '00');
+      label.textContent = 'Submission deadline has passed';
+      root.classList.add('is-expired');
+      return;
+    }
+    const totalSeconds = Math.floor(remaining / 1000);
+    fields.days.textContent = String(Math.floor(totalSeconds / 86400)).padStart(2, '0');
+    fields.hours.textContent = String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, '0');
+    fields.minutes.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+    fields.seconds.textContent = String(totalSeconds % 60).padStart(2, '0');
+    label.textContent = 'Deadline approaching — plan your final submission';
+  };
+  update();
+  window.setInterval(update, 1000);
+})();
+</script>
+
+<script>
+(() => {
+  const loader = document.getElementById('portalLoader');
+  if (!loader) return;
+  // Safety release in case a remote module/CDN request fails.
+  const fallback = window.setTimeout(() => loader.classList.remove('is-active'), 12000);
+  window.addEventListener('portal:ready', () => {
+    window.clearTimeout(fallback);
+    window.setTimeout(() => loader.classList.remove('is-active'), 1500);
+  }, { once: true });
+})();
+</script>
+
+</body>
+</html>
