@@ -98,11 +98,11 @@
       position: relative;
     }
     .login-layout {
-      width: min(100%, 1040px);
+      width: min(100%, 440px);
       display: grid;
-      grid-template-columns: 1fr minmax(340px, 440px) 1fr;
+      grid-template-columns: minmax(0, 440px);
+      justify-content: center;
       align-items: center;
-      gap: 18px;
     }
     .side-note { padding: 24px; color: #755d55; }
     .side-note .eyebrow { color: var(--maroon); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
@@ -2173,3 +2173,129 @@ body { background: #f2eee8; }
   .loader-card, .loader-emblem, .loader-orbit, .loader-orbit-dot, .loader-progress span { animation: none !important; }
   .portal-loader { transition: none; }
 }
+
+
+/* Account page — structured institutional redesign */
+.account-page{--account-maroon:#781f19;--account-gold:#c99b45;max-width:1240px;margin:0 auto}
+.account-page-heading{margin-bottom:18px}
+.account-page-heading .eyebrow,.account-page .account-panel-heading .eyebrow,.account-page .account-section-title .eyebrow{letter-spacing:.13em}
+.account-hero-card{position:relative;overflow:hidden;background:linear-gradient(115deg,#fff 0%,#fffdfa 70%,#f8f1e8 100%);border-color:#e8dcd1;padding:24px 26px;margin:0 0 30px;min-height:126px}
+.account-hero-card:after{content:"";position:absolute;right:-42px;top:-82px;width:230px;height:230px;border:1px solid rgba(120,31,25,.08);border-radius:50%;box-shadow:0 0 0 18px rgba(120,31,25,.025),0 0 0 38px rgba(201,155,69,.035);pointer-events:none}
+.account-hero-card .account-avatar-large{width:82px;height:82px;border:3px solid #fff;box-shadow:0 0 0 1px #e6d6c9,0 5px 15px rgba(44,24,17,.1)}
+.account-identity-main h2{font-size:1.45rem;letter-spacing:-.02em}
+.account-hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}.account-hero-meta span{font-size:.72rem;color:#776b63;background:#f5eee8;border:1px solid #eee2d8;border-radius:30px;padding:5px 9px}
+.account-hero-card .account-active-pill{position:relative;z-index:1;background:#edf7ef;border:1px solid #d6eadb;border-radius:30px;padding:7px 11px}
+.account-section-title{display:flex;align-items:flex-start;gap:13px;margin:30px 0 13px}.account-section-title>span{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:9px;background:#f5eae6;color:var(--account-maroon);font-size:.76rem;font-weight:800}.account-section-title h2{margin:0;color:#332622;font-size:1.08rem;letter-spacing:-.01em}.account-section-title p{margin:4px 0 0;color:#81766f;font-size:.79rem;line-height:1.5}
+.account-page .account-panel{border-color:#e9e2dc;border-radius:13px;box-shadow:0 3px 13px rgba(48,31,22,.035);padding:22px 24px}
+.account-page .account-panel-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:16px}.account-page .account-panel-heading h2{font-size:1.08rem;margin:5px 0 0}.account-page .account-panel-heading p{margin:6px 0 0;color:#81766f;font-size:.79rem;line-height:1.5}
+.account-profile-settings{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px}.account-profile-name-block{min-width:0}.account-profile-settings .account-photo-controls{margin:0;padding:0;border:0;max-width:none}.account-profile-settings .account-photo-controls>div{margin-bottom:3px}.account-profile-settings .account-photo-controls>div strong{display:block;margin-top:7px;color:#332622;font-size:.95rem}.account-profile-settings .account-photo-controls>div p{line-height:1.55}
+.account-page .account-password-form input{min-height:43px;border-color:#e5dcd5;border-radius:8px}.account-page .account-password-form input:focus{outline:0;border-color:#a66a55;box-shadow:0 0 0 3px rgba(120,31,25,.08)}.account-page .account-primary-button{justify-self:start;min-width:160px;padding:11px 16px;border-radius:8px}.account-page .account-secondary-button{border:1px solid #ead8d2;border-radius:8px;padding:10px 14px}
+.account-record-tag{display:inline-flex;align-items:center;border:1px solid #e9e0d8;background:#faf7f3;border-radius:30px;padding:6px 10px;color:#76675e;font-size:.7rem;font-weight:700;white-space:nowrap}.account-record-tag-secure{background:#edf7ef;border-color:#d7eadb;color:#27663d}
+.account-academic-panel .account-detail-grid,.account-login-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}.account-page .account-detail{padding:14px 0;border-bottom:1px solid #f0ebe6}.account-page .account-detail span{font-size:.72rem;letter-spacing:.015em}.account-page .account-detail strong{font-size:.86rem;font-weight:700;color:#382e2a}.account-page .account-record-note{padding:12px 14px;margin-top:17px;border-left:3px solid #d2a653;background:#faf7f1;border-radius:0 7px 7px 0;font-size:.76rem}
+.account-security-panel .account-password-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;max-width:780px}.account-password-grid>div{display:grid;gap:7px}.account-password-grid>button,.account-password-grid>p{grid-column:1/-1}.account-password-grid>p{margin-top:0}
+.account-page .account-signout-panel{background:#fffdfc;border-color:#eaded8}.account-signout-panel h3{font-size:.92rem}.account-signout-panel p{max-width:620px}
+@media(max-width:850px){.account-profile-settings{grid-template-columns:1fr;gap:22px}}
+@media(max-width:600px){.account-hero-card{padding:18px;gap:13px}.account-hero-card .account-avatar-large{width:66px;height:66px}.account-hero-card .account-active-pill{margin-left:0}.account-page .account-panel{padding:17px}.account-academic-panel .account-detail-grid,.account-login-grid,.account-security-panel .account-password-grid{grid-template-columns:1fr}.account-password-grid>button,.account-password-grid>p{grid-column:auto}.account-page .account-panel-heading{flex-direction:column}.account-record-tag{align-self:flex-start}.account-section-title{margin-top:25px}}
+
+/* Account profile photo editor dialog */
+.account-avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:7px;flex-shrink:0}
+.account-edit-picture-trigger{padding:5px 9px;border:0;border-radius:7px;background:#f5ece8;color:#781f19;font:inherit;font-size:.7rem;font-weight:750;cursor:pointer;transition:background .18s ease,color .18s ease}
+.account-edit-picture-trigger:hover{background:#781f19;color:#fff}
+.account-photo-dialog{width:min(560px,calc(100vw - 28px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:1px solid #e7ddd5;border-radius:17px;background:#fff;color:#302724;box-shadow:0 24px 80px rgba(30,18,12,.28);overflow:auto}
+.account-photo-dialog::backdrop{background:rgba(28,17,13,.56);backdrop-filter:blur(3px)}
+.account-photo-dialog-shell{padding:24px}
+.account-photo-dialog-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid #eee6e0}
+.account-photo-dialog-header h2{margin:5px 0;color:#44231e;font-size:1.3rem}
+.account-photo-dialog-header p{margin:5px 0 0;color:#81736d;font-size:.84rem;line-height:1.5}
+.account-dialog-close{width:34px;height:34px;border:0;border-radius:50%;background:#f5f0ed;color:#6d4038;font-size:1.45rem;line-height:1;cursor:pointer}
+.account-photo-editor-body{display:grid;grid-template-columns:180px minmax(0,1fr);gap:25px;align-items:center;padding:22px 0}
+.account-photo-preview-wrap{display:grid;justify-items:center;gap:10px}
+.account-photo-preview-wrap>span{color:#9a8175;font-size:.62rem;font-weight:800;letter-spacing:.13em}
+.account-photo-preview{position:relative;width:164px;height:164px;border:4px solid #fff;box-shadow:0 0 0 1px #e6d6c9,0 8px 24px rgba(44,24,17,.13)}
+.account-photo-preview img{width:100%;height:100%;object-fit:cover;border-radius:50%;transform-origin:center center}
+.account-photo-editor-controls{display:grid;gap:9px;min-width:0}
+.account-photo-editor-controls label{display:flex;justify-content:space-between;gap:12px;margin-top:5px;color:#463631;font-size:.8rem;font-weight:700}
+.account-photo-editor-controls input[type=range]{width:100%;accent-color:#781f19;cursor:pointer}
+.account-photo-editor-controls output{color:#8a6d61;font-weight:700}
+.account-photo-editor-controls .account-secondary-button{justify-self:start;margin-top:5px}
+.account-photo-status{min-height:30px;margin:2px 0 0;color:#81736d;font-size:.74rem;line-height:1.45}
+.account-photo-dialog-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:16px;border-top:1px solid #eee6e0}
+.account-photo-dialog-actions .account-primary-button{margin:0}
+@media(max-width:520px){.account-photo-dialog-shell{padding:18px}.account-photo-editor-body{grid-template-columns:1fr;gap:18px}.account-photo-preview{width:142px;height:142px}.account-photo-editor-controls{width:100%}}
+
+.account-avatar-photo img{position:absolute;left:50%;top:50%;width:140%;height:140%;max-width:none;object-fit:cover;transform-origin:center center;}
+.account-photo-preview img{position:absolute;left:50%;top:50%;width:140%;height:140%;max-width:none;object-fit:cover;}
+
+
+/* Daily attendance register */
+.attendance-history-heading{align-items:flex-end}
+.attendance-month-filter{display:flex;flex-direction:column;gap:5px;color:#846f66;font-size:9px;font-weight:750;white-space:nowrap}
+.attendance-month-filter select{min-width:145px;min-height:35px;padding:0 28px 0 10px;border:1px solid #e5d9cc;border-radius:7px;background:#fffdfa;color:#513c35;font:inherit;font-size:10px}
+.attendance-history-legend{display:flex;flex-wrap:wrap;gap:15px;margin:-2px 0 15px;color:#806f66;font-size:9px}
+.attendance-history-legend span{display:inline-flex;align-items:center;gap:6px}
+.attendance-dot{width:8px;height:8px;border-radius:50%;background:#aaa;display:inline-block}
+.attendance-dot.present{background:#4f8a58}.attendance-dot.absent{background:#b84c43}.attendance-dot.holiday{background:#c49a4c}.attendance-dot.vacation{background:#8c78a8}
+.attendance-vacation-banner{display:flex;align-items:center;gap:12px;margin:0 0 12px;padding:13px 14px;border:1px solid #e9dfcf;border-radius:9px;background:#fbf7ef}
+.attendance-vacation-icon{display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;border-radius:8px;background:#f1e8d8;color:#8b642b}
+.attendance-vacation-banner div{flex:1;min-width:0}.attendance-vacation-banner strong{display:block;color:#654c35;font-size:10px}.attendance-vacation-banner p{margin:3px 0 0;color:#927c67;font-size:9px;line-height:1.5}
+.attendance-register-note{margin:0 0 14px;padding:10px 12px;border-left:3px solid #c79b4b;background:#fcf8ef;color:#806c53;font-size:9px;line-height:1.6}
+.attendance-register-meta{display:flex;justify-content:space-between;margin:0 0 8px;color:#927f75;font-size:9px;font-weight:700}
+.attendance-register-table{min-width:650px}.attendance-register-table th{position:sticky;top:0;z-index:1}.attendance-register-table td{padding:10px 12px;font-size:10px}
+.attendance-status-badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:750}
+.attendance-status-badge.present{color:#397448;background:#edf6ee}.attendance-status-badge.absent{color:#a23d35;background:#faeeec}
+.attendance-holiday-list{margin-top:15px;padding-top:12px;border-top:1px solid #eee6dc}.attendance-holiday-list strong{color:#68564c;font-size:9px}.attendance-holiday-list p{margin:5px 0 0;color:#95847c;font-size:9px;line-height:1.65}
+@media(max-width:600px){.attendance-history-heading{align-items:stretch;flex-direction:column}.attendance-month-filter select{width:100%}.attendance-vacation-banner{align-items:flex-start}.attendance-vacation-banner .attendance-record-tag{display:none}.attendance-register-meta{font-size:8px}}
+
+/* Premium month-view attendance calendar */
+.attendance-calendar-panel{padding:22px!important}
+.attendance-calendar-panel .attendance-history-heading{align-items:center;margin-bottom:18px}
+.attendance-calendar-panel .attendance-history-heading .eyebrow{margin-bottom:5px;color:#a27b3e;font-size:9px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.attendance-calendar-panel .attendance-history-heading .dashboard-section-title{margin-bottom:5px}
+.attendance-calendar-panel .attendance-history-heading p{max-width:560px;line-height:1.6}
+.attendance-calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;margin-bottom:14px;border:1px solid #eee5db;border-radius:12px;background:linear-gradient(135deg,#fffdfa,#faf6f0)}
+.attendance-calendar-month-control{display:flex;align-items:center;gap:13px}
+.attendance-calendar-month-control>div{display:flex;flex-direction:column;gap:3px;min-width:145px}
+.attendance-calendar-month-control strong{color:#45241f;font-family:Georgia,serif;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.attendance-calendar-month-control small{color:#9a877b;font-size:9px}
+.attendance-calendar-nav{display:grid;place-items:center;width:32px;height:32px;border:1px solid #e9ded2;border-radius:9px;background:#fff;color:#6e2a22;font-size:23px;line-height:1;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.attendance-calendar-nav:hover:not(:disabled){border-color:#cda45d;background:#fbf4e8;transform:translateY(-1px)}
+.attendance-calendar-nav:disabled{opacity:.35;cursor:not-allowed}
+.attendance-today-button{padding:8px 12px;border:1px solid #e8d8c3;border-radius:8px;background:#fff;color:#75412d;font-size:10px;font-weight:750;cursor:pointer}
+.attendance-today-button:hover{background:#fbf4e8}
+.attendance-calendar-legend{display:flex;flex-wrap:wrap;gap:12px 18px;margin:0 0 16px;color:#77685f;font-size:10px}
+.attendance-calendar-legend span{display:inline-flex;align-items:center;gap:7px}
+.attendance-calendar-key{width:9px;height:9px;border-radius:3px;display:inline-block}
+.attendance-calendar-key.present{background:#26a269}.attendance-calendar-key.absent{background:#d94d4d}.attendance-calendar-key.holiday{background:#e6a23c}.attendance-calendar-key.vacation{background:#d58a2b}.attendance-calendar-key.no-record{background:#d8d0c8}
+.attendance-calendar-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(230px,.75fr);gap:16px;align-items:stretch}
+.attendance-calendar-main{min-width:0;padding:14px;border:1px solid #eee6de;border-radius:12px;background:#fffdfa}
+.attendance-calendar-weekdays,.attendance-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.attendance-calendar-weekdays{margin-bottom:8px}
+.attendance-calendar-weekdays span{text-align:center;padding:5px 0;color:#a08f83;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.attendance-calendar-day{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:57px;padding:6px 2px;border:1px solid transparent;border-radius:9px;background:#f7f4ef;color:#66574f;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s}
+.attendance-calendar-day:hover{transform:translateY(-2px);box-shadow:0 5px 12px #40231b12}
+.attendance-calendar-day .attendance-calendar-number{font-size:13px;font-weight:800;line-height:1.1}
+.attendance-calendar-day small{font-size:8px;font-weight:750;line-height:1.1;opacity:.9}
+.attendance-calendar-day.present{background:#eaf6ef;border-color:#d6ecdf;color:#267449}
+.attendance-calendar-day.absent{background:#fceeed;border-color:#f5d9d6;color:#b33f39}
+.attendance-calendar-day.holiday{background:#fff3df;border-color:#f5e1bd;color:#a86c1d}
+.attendance-calendar-day.vacation{background:#fff0d9;border-color:#f1d6a9;color:#9d641c}
+.attendance-calendar-day.no-record{background:#f5f2ee;border-color:#eee8e2;color:#a79a90}
+.attendance-calendar-day.is-selected{outline:2px solid #7b2a22;outline-offset:1px;box-shadow:0 0 0 3px #7b2a2212}
+.attendance-calendar-blank{min-height:57px}
+.attendance-calendar-footnote{display:flex;gap:8px;margin-top:13px;padding-top:12px;border-top:1px solid #f0e9e1;color:#97877c;font-size:9px;line-height:1.55}
+.attendance-footnote-mark{display:grid;place-items:center;flex:0 0 15px;width:15px;height:15px;border-radius:50%;background:#f5ead8;color:#956b32;font-size:9px;font-weight:800}
+.attendance-day-detail{display:flex;flex-direction:column;min-width:0;padding:17px;border:1px solid #eee5db;border-radius:12px;background:linear-gradient(160deg,#fffdfa,#faf6f0)}
+.attendance-day-detail-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.attendance-day-detail-top .eyebrow{color:#a27b3e;font-size:9px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.attendance-day-detail h3{margin:16px 0 5px;color:#48251f;font-family:Georgia,serif;font-size:18px;font-weight:600;line-height:1.3}
+.attendance-day-description{margin:0 0 14px;color:#98877c;font-size:10px;line-height:1.5}
+.attendance-detail-tag.present{background:#eaf6ef;color:#267449}.attendance-detail-tag.absent{background:#fceeed;color:#b33f39}.attendance-detail-tag.holiday,.attendance-detail-tag.vacation{background:#fff0d9;color:#9d641c}.attendance-detail-tag.no-record{background:#f1eeea;color:#887b72}
+.attendance-session-list{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.attendance-session-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px;border:1px solid #eee6de;border-radius:9px;background:#fff}
+.attendance-session-row>span{display:flex;flex-direction:column;gap:3px}.attendance-session-row strong{color:#5d4940;font-size:10px}.attendance-session-row small{color:#a08e82;font-size:9px}
+.attendance-session-empty{display:flex;flex-direction:column;gap:5px;justify-content:center;min-height:90px;padding:13px;border:1px dashed #e6d9ca;border-radius:9px;color:#9a897d;font-size:10px;line-height:1.5;text-align:center}
+.attendance-session-empty strong{color:#775c49;font-size:11px}
+.attendance-calendar-bottomline{display:flex;justify-content:space-between;gap:12px;margin:12px 1px 16px;color:#95847a;font-size:9px;font-weight:700}
+.attendance-vacation-banner{margin-top:0}
+@media(max-width:850px){.attendance-calendar-layout{grid-template-columns:1fr}.attendance-day-detail{min-height:190px}.attendance-session-list{margin-top:0}}
+@media(max-width:520px){.attendance-calendar-panel{padding:14px!important}.attendance-calendar-toolbar{align-items:flex-start;padding:11px}.attendance-calendar-month-control{gap:8px}.attendance-calendar-month-control strong{font-size:17px}.attendance-calendar-month-control>div{min-width:112px}.attendance-today-button{font-size:9px;padding:7px 8px}.attendance-calendar-weekdays,.attendance-calendar-grid{gap:3px}.attendance-calendar-day{min-height:47px;border-radius:7px}.attendance-calendar-day .attendance-calendar-number{font-size:12px}.attendance-calendar-day small{font-size:7px}.attendance-calendar-blank{min-height:47px}.attendance-calendar-legend{gap:9px 12px;font-size:9px}.attendance-calendar-bottomline{font-size:8px}}

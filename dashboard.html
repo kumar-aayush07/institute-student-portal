@@ -300,23 +300,57 @@
         </div>
       </div>
 
-      <div class="attendance-panel attendance-history-panel">
-        <div class="attendance-panel-heading">
+      <div class="attendance-panel attendance-history-panel attendance-calendar-panel">
+        <div class="attendance-panel-heading attendance-history-heading">
           <div>
+            <div class="eyebrow">Attendance register</div>
             <h2 class="dashboard-section-title">Daily Attendance History</h2>
-            <p>Individual session dates and statuses will appear here when the detailed register is published.</p>
+            <p>Review your online special-class attendance by date. Select any day to see its session-wise record.</p>
           </div>
+          <span class="attendance-record-tag">3 Aug – 16 Oct 2026</span>
         </div>
-        <div class="attendance-empty-state attendance-history-empty">
-          <div class="attendance-empty-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <rect x="3" y="4" width="18" height="17" rx="2"/>
-              <path d="M16 2v4M8 2v4M3 9h18M8 14h8M8 17h5"/>
-            </svg>
+
+        <div class="attendance-calendar-toolbar">
+          <div class="attendance-calendar-month-control">
+            <button type="button" class="attendance-calendar-nav" id="attendancePrevMonth" aria-label="Previous month">‹</button>
+            <div><strong id="attendanceCalendarMonth">August 2026</strong><small id="attendanceCalendarSub">Monthly attendance overview</small></div>
+            <button type="button" class="attendance-calendar-nav" id="attendanceNextMonth" aria-label="Next month">›</button>
           </div>
-          <strong>Detailed daily entries not connected yet</strong>
-          <p>The summary above reflects the supplied cumulative figures. Individual dates and class-wise entries will be displayed once the institute provides the detailed online attendance register.</p>
+          <button type="button" class="attendance-today-button" id="attendanceToday">Current month</button>
         </div>
+
+        <div class="attendance-calendar-legend" aria-label="Attendance status legend">
+          <span><i class="attendance-calendar-key present"></i>Present</span>
+          <span><i class="attendance-calendar-key absent"></i>Absent</span>
+          <span><i class="attendance-calendar-key holiday"></i>Holiday / Weekend</span>
+          <span><i class="attendance-calendar-key vacation"></i>Institute vacation</span>
+          <span><i class="attendance-calendar-key no-record"></i>No class record</span>
+        </div>
+
+        <div class="attendance-calendar-layout">
+          <div class="attendance-calendar-main">
+            <div class="attendance-calendar-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+            <div class="attendance-calendar-grid" id="attendanceCalendarGrid" role="group" aria-label="Monthly attendance calendar"></div>
+            <div class="attendance-calendar-footnote"><span class="attendance-footnote-mark">i</span><span>Green indicates all scheduled sessions attended. Red indicates at least one missed session on that date. Orange dates are non-instructional days and are excluded from the attendance percentage.</span></div>
+          </div>
+          <aside class="attendance-day-detail" aria-live="polite">
+            <div class="attendance-day-detail-top"><span class="eyebrow">Selected date</span><span class="attendance-record-tag" id="attendanceDayType">Class day</span></div>
+            <h3 id="attendanceSelectedDate">Select a date</h3>
+            <p class="attendance-day-description" id="attendanceDayDescription">Choose a highlighted date on the calendar to inspect its attendance.</p>
+            <div class="attendance-session-list" id="attendanceSessionList"><div class="attendance-session-empty">No date selected</div></div>
+          </aside>
+        </div>
+
+        <div class="attendance-calendar-bottomline">
+          <span id="attendanceVisibleCount">98 session records</span>
+          <span>Two scheduled sessions per instructional day</span>
+        </div>
+        <div class="attendance-vacation-banner">
+          <span class="attendance-vacation-icon">✦</span>
+          <div><strong>Durga Puja – Chhath Puja vacation</strong><p>17 October – 16 November 2026 · Institute vacation. No online class sessions are counted during this period.</p></div>
+          <span class="attendance-record-tag">Institute break</span>
+        </div>
+        <div class="attendance-holiday-list"><strong>Calendar note</strong><p>Weekends and listed festival / public-holiday dates are shown in orange. The institute's officially notified academic holiday list should be treated as final; regional and institute-specific closures may differ.</p></div>
       </div>
 
       <div class="attendance-physical-note">
@@ -392,13 +426,13 @@
         </div>
         <div class="official-assignment-facts">
           <div><span>Issue date</span><strong>30 October 2026</strong></div>
-          <div><span>Submission deadline</span><strong>15 November 2026 · 11:59 PM IST</strong></div>
+          <div><span>Submission deadline</span><strong>16 November 2026 · 11:59 AM IST</strong></div>
           <div><span>Faculty / Evaluator</span><strong>Shyam Iyer Reddy</strong></div>
           <div><span>Course codes</span><strong>CS2500X · CS260L · CS260P</strong></div>
         </div>
         <div class="assignment-countdown" aria-live="polite">
           <div class="assignment-countdown-copy"><span class="eyebrow">Time remaining until submission closes</span><strong id="officialAssignmentCountdownLabel">Calculating deadline…</strong><small>Countdown uses India Standard Time (IST).</small></div>
-          <div class="assignment-countdown-units" id="officialAssignmentCountdown" data-deadline="2026-11-15T23:59:00+05:30">
+          <div class="assignment-countdown-units" id="officialAssignmentCountdown" data-deadline="2026-11-16T11:59:00+05:30">
             <div><strong id="assignmentDays">—</strong><span>Days</span></div><div><strong id="assignmentHours">—</strong><span>Hours</span></div><div><strong id="assignmentMinutes">—</strong><span>Minutes</span></div><div><strong id="assignmentSeconds">—</strong><span>Seconds</span></div>
           </div>
         </div>
@@ -492,81 +526,74 @@
       </div>
     </section>
 
-    <section id="accountSection" hidden>
-      <div class="dashboard-welcome"><div><div class="eyebrow">Student account</div><h1>Account</h1><p>Your institute identity, programme information and account security settings.</p></div></div>
-      <article class="account-identity-card">
-        <div class="account-avatar-large account-avatar-photo" id="accountAvatar">
-          <img id="accountProfilePhoto" src="assets/student.png" alt="Student profile photograph" />
-          <span id="accountAvatarFallback" hidden>AK</span>
+    <section id="accountSection" hidden class="account-page">
+      <div class="dashboard-welcome account-page-heading"><div><div class="eyebrow">STUDENT SERVICES · ACCOUNT MANAGEMENT</div><h1>Account</h1><p>Review your institute identity, manage your profile preferences and keep your account secure.</p></div></div>
+
+      <article class="account-identity-card account-hero-card">
+        <div class="account-avatar-wrap">
+          <div class="account-avatar-large account-avatar-photo" id="accountAvatar">
+            <img id="accountProfilePhoto" src="assets/student.png" alt="Student profile photograph" />
+            <span id="accountAvatarFallback" hidden>AK</span>
+          </div>
+          <button type="button" class="account-edit-picture-trigger" id="openPhotoEditor">Edit Picture</button>
         </div>
-        <div class="account-identity-main"><span class="eyebrow">Student profile</span><h2 id="accountDisplayName">Aayush Kumar</h2><p id="accountRollLine">CS25B149 · 21F1000498</p></div>
+        <div class="account-identity-main"><span class="eyebrow">STUDENT PROFILE</span><h2 id="accountDisplayName">Aayush Kumar</h2><p id="accountRollLine">CS25B149 · 21F1000498</p><div class="account-hero-meta"><span>Computer Science and Engineering</span><span>B.Tech Programme</span></div></div>
         <span class="account-active-pill"><i></i> Signed in</span>
       </article>
 
-      <article class="account-panel account-edit-profile-panel">
-        <div class="account-panel-heading"><div><span class="eyebrow">Personalise your account</span><h2>Profile settings</h2></div></div>
-        <form id="accountDisplayNameForm" class="account-password-form">
-          <label for="accountDisplayNameInput">Display name</label>
-          <input id="accountDisplayNameInput" type="text" maxlength="60" autocomplete="nickname" placeholder="Enter the name shown on your dashboard" required>
-          <button type="submit" class="account-primary-button">Save display name</button>
-          <p id="accountDisplayNameStatus" class="account-form-status" role="status"></p>
-        </form>
-        <div class="account-photo-controls">
-          <div><strong>Adjust profile picture</strong><p>Move and zoom the photo until your face is properly framed.</p></div>
-          <label for="accountPhotoZoom">Zoom <output id="accountPhotoZoomValue">100%</output></label>
-          <input id="accountPhotoZoom" type="range" min="100" max="180" value="100" step="1">
-          <label for="accountPhotoX">Horizontal position</label>
-          <input id="accountPhotoX" type="range" min="0" max="100" value="50" step="1">
-          <label for="accountPhotoY">Vertical position</label>
-          <input id="accountPhotoY" type="range" min="0" max="100" value="50" step="1">
-          <button type="button" id="accountPhotoReset" class="account-secondary-button">Reset photo framing</button>
-          <p id="accountPhotoStatus" class="account-form-status" role="status">Photo framing is saved on this device.</p>
+      <div class="account-section-title"><span>01</span><div><h2>Profile &amp; appearance</h2><p>Manage how your name and profile photograph appear in the portal.</p></div></div>
+      <article class="account-panel account-edit-profile-panel account-profile-settings">
+        <div class="account-profile-name-block"><div class="account-panel-heading"><div><span class="eyebrow">DISPLAY PREFERENCES</span><h2>Display name</h2><p>This name is used for your dashboard greeting and student profile display.</p></div></div>
+          <form id="accountDisplayNameForm" class="account-password-form">
+            <label for="accountDisplayNameInput">Preferred display name</label>
+            <input id="accountDisplayNameInput" type="text" maxlength="60" autocomplete="nickname" placeholder="Enter the name shown on your dashboard" required>
+            <button type="submit" class="account-primary-button">Save display name</button>
+            <p id="accountDisplayNameStatus" class="account-form-status" role="status"></p>
+          </form>
+        </div>
+
+      </article>
+
+      <div class="account-section-title"><span>02</span><div><h2>Institute &amp; academic identity</h2><p>Official student and programme information associated with your account.</p></div></div>
+      <article class="account-panel account-academic-panel">
+        <div class="account-panel-heading"><div><span class="eyebrow">INSTITUTE RECORDS</span><h2>Academic &amp; student details</h2></div><span class="account-record-tag">Institute record</span></div>
+        <div class="account-detail-grid">
+          <div class="account-detail"><span>Full name</span><strong id="accountName">Aayush Kumar</strong></div>
+          <div class="account-detail"><span>Roll number</span><strong>CS25B149</strong></div>
+          <div class="account-detail"><span>Student ID</span><strong>21F1000498</strong></div>
+          <div class="account-detail"><span>Department</span><strong>Computer Science and Engineering</strong></div>
+          <div class="account-detail"><span>Programme</span><strong>B.Tech in Computer Science and Engineering</strong></div>
+          <div class="account-detail"><span>Programme duration</span><strong>4 Years · 8 Semesters</strong></div>
+          <div class="account-detail"><span>Academic session</span><strong>2025 – 2029</strong></div>
+          <div class="account-detail"><span>Current academic year</span><strong>First Year · 2025–26</strong></div>
+        </div>
+        <p class="account-record-note">These details represent institute identity and academic records. If any information is incorrect, contact the Academic Affairs Department. Official records cannot be edited from this page.</p>
+      </article>
+
+      <div class="account-section-title"><span>03</span><div><h2>Login &amp; account activity</h2><p>Information about the credentials and session used to access the student portal.</p></div></div>
+      <article class="account-panel account-login-panel">
+        <div class="account-panel-heading"><div><span class="eyebrow">AUTHENTICATION DETAILS</span><h2>Account information</h2></div><span class="account-record-tag account-record-tag-secure">Authenticated</span></div>
+        <div class="account-detail-grid account-login-grid">
+          <div class="account-detail"><span>Registered email</span><strong id="accountEmail">cs25b149.iitm@outlook.in</strong></div>
+          <div class="account-detail"><span>Account created</span><strong id="accountCreated">03 August 2026</strong></div>
+          <div class="account-detail"><span>Last sign-in</span><strong id="accountLastSignIn">Loading…</strong></div>
+          <div class="account-detail"><span>Account status</span><strong class="account-status-text">Authenticated</strong></div>
         </div>
       </article>
 
-      <div class="account-content-grid">
-        <article class="account-panel">
-          <div class="account-panel-heading"><div><span class="eyebrow">Institute records</span><h2>Academic &amp; student details</h2></div></div>
-          <div class="account-detail-grid">
-            <div class="account-detail"><span>Full name</span><strong id="accountName">Aayush Kumar</strong></div>
-            <div class="account-detail"><span>Roll number</span><strong>CS25B149</strong></div>
-            <div class="account-detail"><span>Student ID</span><strong>21F1000498</strong></div>
-            <div class="account-detail"><span>Department</span><strong>Computer Science and Engineering</strong></div>
-            <div class="account-detail"><span>Programme</span><strong>B.Tech in Computer Science and Engineering</strong></div>
-            <div class="account-detail"><span>Programme duration</span><strong>4 Years · 8 Semesters</strong></div>
-            <div class="account-detail"><span>Academic session</span><strong>2025 – 2029</strong></div>
-            <div class="account-detail"><span>Current academic year</span><strong>First Year · 2025–26</strong></div>
-          </div>
-          <p class="account-record-note">These are institute identity and academic records. If any detail is incorrect, contact the Academic Affairs Department; changes cannot be made from this page.</p>
-        </article>
+      <div class="account-section-title"><span>04</span><div><h2>Password &amp; security</h2><p>Update your password periodically and never share your login credentials.</p></div></div>
+      <article class="account-panel account-security-panel">
+        <div class="account-panel-heading"><div><span class="eyebrow">PASSWORD MANAGEMENT</span><h2>Change password</h2><p>Choose a strong password with at least 8 characters.</p></div></div>
+        <form id="accountPasswordForm" class="account-password-form account-password-grid">
+          <div><label for="accountNewPassword">New password</label><input id="accountNewPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required></div>
+          <div><label for="accountConfirmPassword">Confirm new password</label><input id="accountConfirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Re-enter new password" required></div>
+          <button type="submit" class="account-primary-button">Update password</button>
+          <p id="accountPasswordStatus" class="account-form-status" role="status"></p>
+        </form>
+      </article>
 
-        <div class="account-side-stack">
-          <article class="account-panel">
-            <div class="account-panel-heading"><div><span class="eyebrow">Login credentials</span><h2>Account information</h2></div></div>
-            <div class="account-detail-list">
-              <div><span>Login credentials · Registered email</span><strong id="accountEmail">cs25b149.iitm@outlook.in</strong></div>
-              <div><span>Account created</span><strong id="accountCreated">03 August 2026</strong></div>
-              <div><span>Last sign-in</span><strong id="accountLastSignIn">Loading…</strong></div>
-              <div><span>Account status</span><strong class="account-status-text">Authenticated</strong></div>
-            </div>
-          </article>
-          <article class="account-panel">
-            <div class="account-panel-heading"><div><span class="eyebrow">Security</span><h2>Change password</h2></div></div>
-            <form id="accountPasswordForm" class="account-password-form">
-              <label for="accountNewPassword">New password</label>
-              <input id="accountNewPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required>
-              <label for="accountConfirmPassword">Confirm new password</label>
-              <input id="accountConfirmPassword" type="password" minlength="8" autocomplete="new-password" placeholder="Re-enter new password" required>
-              <button type="submit" class="account-primary-button">Update password</button>
-              <p id="accountPasswordStatus" class="account-form-status" role="status"></p>
-            </form>
-          </article>
-          <article class="account-panel account-signout-panel">
-            <div><h3>Sign out of this device</h3><p>End your current student portal session securely.</p></div>
-            <button type="button" id="accountLogoutButton" class="account-secondary-button">Sign out</button>
-          </article>
-        </div>
-      </div>
+      <div class="account-section-title"><span>05</span><div><h2>End session</h2><p>Sign out when you have finished using the portal, especially on a shared device.</p></div></div>
+      <article class="account-panel account-signout-panel"><div><h3>Sign out of this device</h3><p>Your current student portal session will be securely ended.</p></div><button type="button" id="accountLogoutButton" class="account-secondary-button">Sign out</button></article>
     </section>
 
     <section id="documentsSection" hidden>
@@ -769,6 +796,24 @@
   </div>
 </footer>
 </div>
+
+
+<dialog class="account-photo-dialog" id="accountPhotoDialog" aria-labelledby="photoDialogTitle">
+  <form method="dialog" class="account-photo-dialog-shell" id="accountPhotoDialogForm">
+    <div class="account-photo-dialog-header"><div><span class="eyebrow">PROFILE SETTINGS</span><h2 id="photoDialogTitle">Edit profile picture</h2><p>Adjust how your photograph appears across the student portal.</p></div><button type="button" class="account-dialog-close" id="closePhotoEditor" aria-label="Close">×</button></div>
+    <div class="account-photo-editor-body">
+      <div class="account-photo-preview-wrap"><div class="account-photo-preview account-avatar-photo" id="accountPhotoPreview"><img id="accountPhotoPreviewImage" src="assets/student.png" alt="Profile picture preview"><span id="accountPhotoPreviewFallback" hidden>AK</span></div><span>LIVE PREVIEW</span></div>
+      <div class="account-photo-editor-controls">
+        <label for="accountPhotoZoom">Zoom <output id="accountPhotoZoomValue">100%</output></label><input id="accountPhotoZoom" type="range" min="100" max="200" value="100" step="1">
+        <label for="accountPhotoX">Horizontal positioning</label><input id="accountPhotoX" type="range" min="0" max="100" value="50" step="1">
+        <label for="accountPhotoY">Vertical positioning</label><input id="accountPhotoY" type="range" min="0" max="100" value="50" step="1">
+        <button type="button" id="accountPhotoReset" class="account-secondary-button">Reset adjustments</button>
+        <p class="account-photo-status" id="accountPhotoStatus" role="status">Changes are previewed live and saved on this device.</p>
+      </div>
+    </div>
+    <div class="account-photo-dialog-actions"><button type="button" class="account-secondary-button" id="cancelPhotoEditor">Cancel</button><button type="button" class="account-primary-button" id="savePhotoEditor">Save Changes</button></div>
+  </form>
+</dialog>
 
 <script>
   const date = new Date();
@@ -1158,20 +1203,59 @@ if (sessionError || !session) {
     status.textContent = 'Display name saved. Your dashboard greeting has been updated.';
   });
 
-  // Save adjustable image framing on this device.
+  // Profile-photo editor: controls stay inside a dialog and commit only on Save.
   const cropKey = 'studentPortalProfileCrop';
-  let crop = { zoom: 100, x: 50, y: 50 };
-  try { crop = { ...crop, ...JSON.parse(localStorage.getItem(cropKey) || '{}') }; } catch (_) {}
-  const applyCrop = () => {
-    accountPhoto.style.objectPosition = `${crop.x}% ${crop.y}%`;
-    accountPhoto.style.transform = `scale(${crop.zoom / 100})`;
-    $('accountPhotoZoom').value = crop.zoom; $('accountPhotoX').value = crop.x; $('accountPhotoY').value = crop.y;
-    $('accountPhotoZoomValue').textContent = `${crop.zoom}%`;
-    try { localStorage.setItem(cropKey, JSON.stringify(crop)); } catch (_) {}
+  const photoDialog = $('accountPhotoDialog');
+  const previewImage = $('accountPhotoPreviewImage');
+  const previewFallback = $('accountPhotoPreviewFallback');
+  let savedCrop = { zoom: 100, x: 50, y: 50 };
+  try { savedCrop = { ...savedCrop, ...JSON.parse(localStorage.getItem(cropKey) || '{}') }; } catch (_) {}
+  let draftCrop = { ...savedCrop };
+  const paintPhoto = (image, crop) => {
+    const shiftX = (50 - crop.x) * 0.55;
+    const shiftY = (50 - crop.y) * 0.55;
+    image.style.objectPosition = '50% 50%';
+    image.style.transform = `translate(calc(-50% + ${shiftX}px), calc(-50% + ${shiftY}px)) scale(${crop.zoom / 100})`;
   };
-  [['accountPhotoZoom','zoom'],['accountPhotoX','x'],['accountPhotoY','y']].forEach(([id,key]) => $(id).addEventListener('input', event => { crop[key] = Number(event.target.value); applyCrop(); }));
-  $('accountPhotoReset').addEventListener('click', () => { crop = { zoom: 100, x: 50, y: 50 }; applyCrop(); $('accountPhotoStatus').textContent = 'Photo framing reset.'; });
-  applyCrop();
+  const syncPhotoControls = () => {
+    $('accountPhotoZoom').value = draftCrop.zoom;
+    $('accountPhotoX').value = draftCrop.x;
+    $('accountPhotoY').value = draftCrop.y;
+    $('accountPhotoZoomValue').textContent = `${draftCrop.zoom}%`;
+    paintPhoto(previewImage, draftCrop);
+  };
+  const openPhotoEditor = () => {
+    draftCrop = { ...savedCrop };
+    previewImage.src = accountPhoto.src;
+    previewImage.style.display = accountPhoto.style.display === 'none' ? 'none' : 'block';
+    previewFallback.hidden = previewImage.style.display !== 'none';
+    previewFallback.textContent = $('accountAvatarFallback').textContent || 'AK';
+    syncPhotoControls();
+    photoDialog.showModal();
+  };
+  const closePhotoEditor = () => photoDialog.close();
+  $('openPhotoEditor').addEventListener('click', openPhotoEditor);
+  $('closePhotoEditor').addEventListener('click', closePhotoEditor);
+  $('cancelPhotoEditor').addEventListener('click', closePhotoEditor);
+  [['accountPhotoZoom','zoom'],['accountPhotoX','x'],['accountPhotoY','y']].forEach(([id,key]) => $(id).addEventListener('input', event => {
+    draftCrop[key] = Number(event.target.value);
+    $('accountPhotoZoomValue').textContent = `${draftCrop.zoom}%`;
+    paintPhoto(previewImage, draftCrop);
+  }));
+  $('accountPhotoReset').addEventListener('click', () => {
+    draftCrop = { zoom: 100, x: 50, y: 50 };
+    syncPhotoControls();
+    $('accountPhotoStatus').textContent = 'Preview reset. Save Changes to apply it.';
+  });
+  $('savePhotoEditor').addEventListener('click', () => {
+    savedCrop = { ...draftCrop };
+    paintPhoto(accountPhoto, savedCrop);
+    try { localStorage.setItem(cropKey, JSON.stringify(savedCrop)); } catch (_) {}
+    $('accountPhotoStatus').textContent = 'Photo framing saved on this device.';
+    photoDialog.close();
+  });
+  photoDialog.addEventListener('click', event => { if (event.target === photoDialog) photoDialog.close(); });
+  paintPhoto(accountPhoto, savedCrop);
 
   $('accountPasswordForm').addEventListener('submit', async event => {
     event.preventDefault();
@@ -1368,6 +1452,97 @@ if (sessionError || !session) {
     window.clearTimeout(fallback);
     window.setTimeout(() => loader.classList.remove('is-active'), 1500);
   }, { once: true });
+})();
+</script>
+
+
+<script>
+(() => {
+  const grid = document.getElementById('attendanceCalendarGrid');
+  if (!grid) return;
+  const monthTitle = document.getElementById('attendanceCalendarMonth');
+  const monthSub = document.getElementById('attendanceCalendarSub');
+  const detailDate = document.getElementById('attendanceSelectedDate');
+  const detailType = document.getElementById('attendanceDayType');
+  const detailDescription = document.getElementById('attendanceDayDescription');
+  const sessionList = document.getElementById('attendanceSessionList');
+  const count = document.getElementById('attendanceVisibleCount');
+  const prev = document.getElementById('attendancePrevMonth');
+  const next = document.getElementById('attendanceNextMonth');
+  const today = document.getElementById('attendanceToday');
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const holidayNames = {
+    '2026-08-15':'Independence Day', '2026-08-25':'Janmashtami', '2026-08-28':'Raksha Bandhan',
+    '2026-09-04':'Onam', '2026-09-14':'Ganesh Chaturthi', '2026-09-17':'Vishwakarma Puja',
+    '2026-10-02':'Gandhi Jayanti'
+  };
+  const absentSlots = new Set(['2026-08-07-2','2026-08-19-1','2026-09-09-2','2026-09-24-1','2026-10-06-2','2026-10-14-1']);
+  const start = new Date(2026, 7, 3);
+  const lastClass = new Date(2026, 9, 16);
+  const vacationStart = new Date(2026, 9, 17);
+  const vacationEnd = new Date(2026, 10, 15);
+  let viewYear = 2026, viewMonth = 7, selectedISO = '2026-08-03';
+  const isoOf = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const dateLabel = d => new Intl.DateTimeFormat('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(d);
+  const records = new Map();
+  for (let d = new Date(start); d <= lastClass; d.setDate(d.getDate()+1)) {
+    const iso = isoOf(d);
+    if (d.getDay() === 0 || d.getDay() === 6 || holidayNames[iso]) continue;
+    records.set(iso, [1,2].map(session => ({session, status:absentSlots.has(`${iso}-${session}`)?'Absent':'Present'})));
+  }
+  const isVacation = d => d >= vacationStart && d <= vacationEnd;
+  const classify = d => {
+    const iso = isoOf(d);
+    if (isVacation(d)) return {type:'vacation', label:'Institute vacation', note:'Durga Puja – Chhath Puja vacation'};
+    if (holidayNames[iso]) return {type:'holiday', label:'Public / festival holiday', note:holidayNames[iso]};
+    if (d.getDay()===0 || d.getDay()===6) return {type:'holiday', label:'Weekend', note:d.getDay()===0?'Sunday':'Saturday'};
+    const sessions = records.get(iso);
+    if (sessions) return {type:sessions.some(x=>x.status==='Absent')?'absent':'present', label:sessions.some(x=>x.status==='Absent')?'Attendance exception':'Present', note:'Online special classes'};
+    return {type:'no-record',label:'No class record',note:'No attendance entry is available for this date'};
+  };
+  const showDate = d => {
+    const iso=isoOf(d), info=classify(d), sessions=records.get(iso);
+    selectedISO=iso;
+    detailDate.textContent=dateLabel(d);
+    detailType.textContent=info.label;
+    detailType.className='attendance-record-tag attendance-detail-tag '+info.type;
+    detailDescription.textContent=info.note;
+    if (sessions) {
+      sessionList.innerHTML=sessions.map(x=>`<div class="attendance-session-row"><span><strong>Session ${x.session}</strong><small>Online special class</small></span><b class="attendance-status-badge ${x.status.toLowerCase()}">${x.status}</b></div>`).join('');
+    } else {
+      sessionList.innerHTML=`<div class="attendance-session-empty"><strong>${info.type==='holiday'?'No classes scheduled':info.type==='vacation'?'Institute vacation':'No attendance entry'}</strong><span>${info.note}</span></div>`;
+    }
+    grid.querySelectorAll('.attendance-calendar-day').forEach(b=>b.classList.toggle('is-selected',b.dataset.date===iso));
+  };
+  const render = () => {
+    const first=new Date(viewYear,viewMonth,1), days=new Date(viewYear,viewMonth+1,0).getDate();
+    monthTitle.textContent=`${monthNames[viewMonth]} ${viewYear}`;
+    monthSub.textContent=`${records.size} recorded class dates · 98 scheduled sessions`;
+    grid.innerHTML='';
+    for(let i=0;i<first.getDay();i++){const blank=document.createElement('span');blank.className='attendance-calendar-blank';blank.setAttribute('aria-hidden','true');grid.append(blank);}
+    for(let day=1;day<=days;day++){
+      const d=new Date(viewYear,viewMonth,day), iso=isoOf(d), info=classify(d), sessions=records.get(iso);
+      const b=document.createElement('button'); b.type='button'; b.className=`attendance-calendar-day ${info.type}`; b.dataset.date=iso;
+      const n=document.createElement('span'); n.className='attendance-calendar-number'; n.textContent=day; b.append(n);
+      if(sessions){const meta=document.createElement('small');meta.textContent=sessions.some(x=>x.status==='Absent')?'Absent':'Present';b.append(meta);b.title=`${dateLabel(d)} · ${info.label}`;}
+      else {const meta=document.createElement('small');meta.textContent=info.type==='vacation'?'Vacation':info.type==='holiday'?'Holiday':'';b.append(meta);b.title=`${dateLabel(d)} · ${info.note}`;}
+      if(iso===selectedISO)b.classList.add('is-selected');
+      b.setAttribute('aria-label',`${dateLabel(d)}: ${info.label}`);
+      b.addEventListener('click',()=>showDate(d)); grid.append(b);
+    }
+    const totalCells=grid.children.length; for(let i=totalCells;i<42;i++){const blank=document.createElement('span');blank.className='attendance-calendar-blank';blank.setAttribute('aria-hidden','true');grid.append(blank);}
+    const monthRecords=[...records.entries()].filter(([iso])=>iso.startsWith(`${viewYear}-${String(viewMonth+1).padStart(2,'0')}`)).reduce((n,[,v])=>n+v.length,0);
+    count.textContent=`${monthRecords} session records in ${monthNames[viewMonth]}`;
+    prev.disabled=viewYear===2026&&viewMonth===7;
+    next.disabled=viewYear===2026&&viewMonth===10;
+    const chosen=new Date(`${selectedISO}T12:00:00`); if(chosen.getFullYear()===viewYear&&chosen.getMonth()===viewMonth)showDate(chosen);
+    else {detailDate.textContent='Select a date';detailType.textContent='Date details';detailType.className='attendance-record-tag';detailDescription.textContent='Choose a date on the calendar to inspect its attendance.';sessionList.innerHTML='<div class="attendance-session-empty">No date selected</div>';}
+  };
+  prev.addEventListener('click',()=>{if(viewMonth>7){viewMonth--;render();}});
+  next.addEventListener('click',()=>{if(viewMonth<10){viewMonth++;render();}});
+  today.addEventListener('click',()=>{viewYear=2026;viewMonth=7;render();});
+  render();
+  showDate(new Date(2026,7,3));
 })();
 </script>
 
