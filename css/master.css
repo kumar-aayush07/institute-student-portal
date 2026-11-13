@@ -2299,3 +2299,12 @@ body { background: #f2eee8; }
 .attendance-vacation-banner{margin-top:0}
 @media(max-width:850px){.attendance-calendar-layout{grid-template-columns:1fr}.attendance-day-detail{min-height:190px}.attendance-session-list{margin-top:0}}
 @media(max-width:520px){.attendance-calendar-panel{padding:14px!important}.attendance-calendar-toolbar{align-items:flex-start;padding:11px}.attendance-calendar-month-control{gap:8px}.attendance-calendar-month-control strong{font-size:17px}.attendance-calendar-month-control>div{min-width:112px}.attendance-today-button{font-size:9px;padding:7px 8px}.attendance-calendar-weekdays,.attendance-calendar-grid{gap:3px}.attendance-calendar-day{min-height:47px;border-radius:7px}.attendance-calendar-day .attendance-calendar-number{font-size:12px}.attendance-calendar-day small{font-size:7px}.attendance-calendar-blank{min-height:47px}.attendance-calendar-legend{gap:9px 12px;font-size:9px}.attendance-calendar-bottomline{font-size:8px}}
+
+.institution-footer-disclaimer {
+  text-align: center;
+  padding: 12px 16px;
+  color: #d6b98b;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  border-top: 1px solid rgba(214, 166, 79, 0.2);
+}
